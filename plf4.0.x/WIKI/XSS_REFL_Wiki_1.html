@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_Wiki_1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Wiki_1</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/portal/login?initialURI=/portal/intranet/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td></td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== Login ===</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Root Root</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== Input&nbsp;&nbsp;on Wiki searchbox ===</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Wiki</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Wiki</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='wikiSearchValue']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@id='wikiSearchValue']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='wikiSearchValue']</td>
+	<td>&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>keyPress</td>
+	<td>//input[@id='wikiSearchValue']</td>
+	<td>\13</td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td></td>
+	<td>XSS</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== Log out ===</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Root Root</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Root Root</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='UIPortalLoginFormAction']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
