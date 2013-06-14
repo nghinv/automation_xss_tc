@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_TQAVN_SECU_Forum_6</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_TQAVN_SECU_Forum_6</td></tr>
+</thead><tbody>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gatein</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Forums</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Forum</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== Input Forums Title===</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='ForumTitle']</td>
+	<td>&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td></td>
+	<td>XSS</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='Description']</td>
+	<td>forum forum</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Moderation Options</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@id='AutoAddEmailNotify']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='NotifyWhenAddPost']</td>
+	<td>email@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='NotifyWhenAddTopic']</td>
+	<td>email@gmail.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Permissions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPermissionInput']</td>
+	<td>boot</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction &gt; button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
