@@ -13,7 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>echo</td>
-	<td>Logout to make sure that no logged in session is alive in the browser</td>
+	<td>++ COMM_login</td>
 	<td></td>
 </tr>
 <tr>
@@ -22,23 +22,28 @@
 	<td></td>
 </tr>
 <tr>
+	<td>echo</td>
+	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
 	<td></td>
 </tr>
 <tr>
+	<td>open</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=${UserName}&amp;password=${UserPassword}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=${UserName}&amp;password=${UserPassword}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>echo</td>
-	<td>=== Login ===</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/portal/login?initialURI=/portal/intranet&amp;username=${UserName}&amp;password=${UserPassword}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/portal/login?initialURI=/portal/intranet&amp;username=${UserName}&amp;password=${UserPassword}</td>
+	<td>-- COMM_login</td>
 	<td></td>
 </tr>
 </tbody></table>

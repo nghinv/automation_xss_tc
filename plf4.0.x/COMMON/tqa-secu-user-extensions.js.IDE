@@ -12,7 +12,7 @@ IDEIncludeCommand.BEGIN_TEMPLATE = "begin$Template$";
 IDEIncludeCommand.END_TEMPLATE = "end$Template$";
 IDEIncludeCommand.VERSION = "1.1";
 IDEIncludeCommand.TQA_XSS_DIR = "file:///java/exo-working/automation_xss_tc/plf4.0.x/COMMON/";
-   
+
 IDEIncludeCommand.prototype.prepareTestCaseAsText = function(responseAsText, paramsArray) {
     /**
      * Prepare the HTML to be included in as text into the current testcase-HTML
@@ -237,6 +237,9 @@ IDEIncludeCommand.prototype.injectIncludeTestCommands = function(locator,include
 	    new_target = new_target.replace(/&amp;/g, '&');
 	    new_value = new_value.replace(/&amp;/g, '&');
 	  }
+
+	  new_target=unescape(new_target);
+	  new_value=unescape(new_value);
 	  
 	  LOG.debug("Including new command >>new_cmd=" + new_cmd + " >>new_target=" + new_target + " >>new_value=" + new_value);
           var newCommand =  new Command(new_cmd,new_target,new_value); 
