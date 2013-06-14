@@ -12,6 +12,16 @@
 <tr><td rowspan="1" colspan="3">COMM_login</td></tr>
 </thead><tbody>
 <tr>
+	<td>echo</td>
+	<td>Logout to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
 	<td></td>
@@ -27,29 +37,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
 	<td>open</td>
 	<td>/portal/login?initialURI=/portal/intranet&amp;username=${UserName}&amp;password=${UserPassword}</td>
 	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>root</td>
-	<td>UserName</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>gtngtn</td>
-	<td>UserPassword</td>
 </tr>
 </tbody></table>
 </body>
