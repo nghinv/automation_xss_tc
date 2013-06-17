@@ -23,7 +23,7 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>=== Input&nbsp;&nbsp;on Wiki searchbox ===</td>
+	<td>=== Advance Wiki searchbox ===</td>
 	<td></td>
 </tr>
 <tr>
@@ -40,16 +40,6 @@
 	<td>waitForElementPresent</td>
 	<td>//input[@id='wikiSearchValue']</td>
 	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@id='wikiSearchValue']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='wikiSearchValue']</td>
-	<td>&lt;script&gt;alert(6001)&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>storeEval</td>
@@ -57,8 +47,23 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='text']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='text']</td>
+	<td>&lt;script&gt;alert(6009);&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>assertAlertNotPresent</td>
-	<td>6001</td>
+	<td>6009</td>
 	<td></td>
 </tr>
 <tr>

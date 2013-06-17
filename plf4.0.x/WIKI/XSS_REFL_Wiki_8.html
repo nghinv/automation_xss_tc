@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Wiki_1</title>
+<title>XSS_REFL_Wiki_8</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Wiki_1</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Wiki_8</td></tr>
 </thead><tbody>
 <tr>
 	<td>echo</td>
@@ -23,7 +23,7 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>=== Input&nbsp;&nbsp;on Wiki searchbox ===</td>
+	<td>=== Search from Template ===</td>
 	<td></td>
 </tr>
 <tr>
@@ -37,28 +37,38 @@
 	<td></td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>css=div.dropdown.uiActionWithLabel</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
-	<td>//input[@id='wikiSearchValue']</td>
+	<td>link=From Template...</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@id='wikiSearchValue']</td>
+	<td>link=From Template...</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[contains(@onclick,'SearchTemplate')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='wikiSearchValue']</td>
-	<td>&lt;script&gt;alert(6001)&lt;/script&gt;</td>
+	<td>id=TemplateSeachBox</td>
+	<td>&lt;script&gt;alert(6008);&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>storeEval</td>
-	<td>window.jQuery(&quot;.AdvancedSearch&quot;).click()</td>
-	<td></td>
+	<td>keyPress</td>
+	<td>//button[contains(@onclick,'SearchTemplate')]</td>
+	<td>\13</td>
 </tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>6001</td>
+	<td>6008</td>
 	<td></td>
 </tr>
 <tr>

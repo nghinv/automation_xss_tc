@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Wiki_1</title>
+<title>XSS_REFL_Wiki_10,11</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Wiki_1</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Wiki_10,11</td></tr>
 </thead><tbody>
 <tr>
 	<td>echo</td>
@@ -23,7 +23,7 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>=== Input&nbsp;&nbsp;on Wiki searchbox ===</td>
+	<td>=== Edit Template ===</td>
 	<td></td>
 </tr>
 <tr>
@@ -38,27 +38,72 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//input[@id='wikiSearchValue']</td>
+	<td>link=Wiki Settings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//input[@id='wikiSearchValue']</td>
+	<td>link=Wiki Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(@onclick,'#EditTemplate/Two-Column_Layout')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(@onclick,'#EditTemplate/Two-Column_Layout')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='wikiSearchValue']</td>
-	<td>&lt;script&gt;alert(6001)&lt;/script&gt;</td>
+	<td>id=titleInput</td>
+	<td>Two-Column Layout&lt;script&gt;alert(6010);&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>storeEval</td>
-	<td>window.jQuery(&quot;.AdvancedSearch&quot;).click()</td>
+	<td>waitForElementPresent</td>
+	<td>id=UISubmitToolBarUpper_SaveTemplate_</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=UISubmitToolBarUpper_SaveTemplate_</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>6001</td>
+	<td>6010</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== Preview template ===</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#UIEditorTabs &gt; button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>6010</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.actionIcon.pull-right &gt; i.uiIconClose</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.actionIcon.pull-right &gt; i.uiIconClose</td>
 	<td></td>
 </tr>
 <tr>
