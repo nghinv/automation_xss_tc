@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_STOR_1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
+</thead><tbody>
+<tr>
+	<td>store</td>
+	<td>space8002</td>
+	<td>space_name</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>==User1 logins, creates a space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=demo,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Join a space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Join a space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=displayName</td>
+	<td>${space_name}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>&lt;script&gt;alert(8002);&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Access &amp; Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=UIRegistration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.uiAction &gt; button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>==User 2 logins, tests page &quot;All spaces&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=mary,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Join a space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Join a space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=${space_name}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>8002</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
