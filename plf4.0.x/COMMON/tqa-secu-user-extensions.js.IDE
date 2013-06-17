@@ -272,4 +272,7 @@ Selenium.prototype.doEnd$Template$ = function(locator){
     LOG.info("End Template " + locator);	
 };
 
-
+Selenium.prototype.doSleep = function(locator, paramString) {
+  var start = new Date().getTime();
+  while (new Date().getTime() < start + parseInt(locator));
+};
