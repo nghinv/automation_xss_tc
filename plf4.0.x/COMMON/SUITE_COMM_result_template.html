@@ -1,0 +1,80 @@
+<html>
+<head><style type='text/css'>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-style: italic;
+}
+
+.selected {
+    background-color: #ffffcc;
+}
+
+.status_done {
+    background-color: #eeffee;
+}
+
+.status_passed {
+    background-color: #ccffcc;
+}
+
+.status_not_run {
+    background-color: #808080;
+}
+
+.status_failed {
+    background-color: #ffcccc;
+}
+
+.breakpoint {
+    background-color: #cccccc;
+    border: 1px solid black;
+}
+</style><title>Test suite results on DATE</title>
+  <script type="text/javascript">
+    function show_detail(src)
+    {
+      var detailframe=document.getElementById("detailframe");
+      detailframe.src=src;
+    }
+    function init_frame()
+    {
+      var initsrc=document.getElementById("init_element").value;
+      show_detail(initsrc);
+    }
+  </script>
+</head>
+<body onload="init_frame();">
+<input type="hidden" id="init_element" value="#"/>
+<table class="layout" width="100%" height="100%">
+  <tr width="100%" height="100%" valign="top">
+   <td height="100%" width="25%" valign="top">
+    <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+    <tr><td><b>Test Results on DATE</b></td></tr>
+    <!--tr><td><a href=\"${htmlfile}.html\">${htmlfile}</a></td></tr-->
+    </tbody></table>
+  </td>
+  <td height="100%" width="75%" valign="top">
+    <iframe height="100%" width="100%" id="detailframe" src=""/>
+  </td>
+  </tr>
+</table>
+</body>
+</html>
