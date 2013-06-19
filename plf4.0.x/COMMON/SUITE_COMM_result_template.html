@@ -43,6 +43,10 @@ a {
     background-color: #ffcccc;
 }
 
+.status_total {
+    background-color: #00ffff;
+}
+
 .breakpoint {
     background-color: #cccccc;
     border: 1px solid black;
@@ -66,12 +70,21 @@ a {
 <table class="layout" width="100%" height="100%">
   <tr width="100%" height="100%" valign="top">
    <td height="100%" width="25%" valign="top">
+    <b>Test Results on DATE</b><br/>
     <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
-    <tr><td><b>Test Results on DATE</b></td></tr>
-    <!--tr><td><a href=\"${htmlfile}.html\">${htmlfile}</a></td></tr-->
+    <tr class="status_total"><td><b>Total:</b></td><td><b></b></td></tr>
+    <tr class="status_failed"><td><b>Failed:</b></td><td><b></b></td></tr>
+    <tr class="status_passed"><td><b>Passed:</b></td><td><b></b></td></tr>
+    <tr class="status_not_run"><td><b>Not run yet:</b><td><b></b></td></tr>
+    </tbody>
+    </table>
+    
+    <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+    <tr><td><b>Result table:</b></td></tr>
     </tbody></table>
   </td>
   <td height="100%" width="75%" valign="top">
+    <strong>Test Suite Result Detail:</strong><br/>
     <iframe height="100%" width="100%" id="detailframe" src=""/>
   </td>
   </tr>
