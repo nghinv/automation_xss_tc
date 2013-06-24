@@ -4,18 +4,22 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_TQAVN_SECU_Forum_1</title>
+<title>XSS_REFL_Forum_1</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_TQAVN_SECU_Forum_1</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_1</td></tr>
 </thead><tbody>
-
+<tr>
+	<td>store</td>
+	<td>4001</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
-	<td>UserName=root,UserPassword=gatein</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
 
 </tr>
 <tr>
@@ -42,7 +46,7 @@
 <tr>
 	<td>type</td>
 	<td>//input[@id='inputValue']</td>
-	<td>&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;</td>
+	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>keyPress</td>
@@ -50,9 +54,9 @@
 	<td>\13</td>
 </tr>
 <tr>
-	<td>assertAlertNotPresent</td>
-	<td></td>
-	<td>XSS</td>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
 </tr>
 <tr>
 	<td>include</td>
