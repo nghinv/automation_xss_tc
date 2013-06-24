@@ -1,6 +1,6 @@
 #!/bin/bash -xv
 if [[ -z $1 || "x$1" == "x" ]]; then
-  echo "`date`, going to run test on all module"
+  echo "`date`, going to run test on all the modules"
 else
   echo "`date`, going to run test on module: $1"
 fi
