@@ -32,8 +32,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=Join a space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
 	<td></td>
 </tr>
 <tr>
@@ -42,9 +47,14 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayName</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>id=displayName</td>
-	<td>XSSspace01</td>
+	<td>XSSspace03</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -68,47 +78,37 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>+++ Space settings - Name +++</td>
+	<td>+++ Search Members+++</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=settings</td>
+	<td>waitForTextPresent</td>
+	<td>Members</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=settings</td>
+	<td>clickAt</td>
+	<td>//a[contains(@onclick,'/members')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>id=displayName</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=displayName</td>
+	<td>waitForTextPresent</td>
+	<td>Space Members</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=displayName</td>
-	<td>&lt;script&gt;alert(5301);&gt;/script&gt;</td>
+	<td>//input[contains(@title,'Name')]</td>
+	<td>&lt;script&gt;alert(5303);&gt;/script&gt;</td>
 </tr>
 <tr>
 	<td>clickAt</td>
-	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td>//button[@id='SearchButton']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>5301</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=OK</td>
+	<td>5303</td>
 	<td></td>
 </tr>
 <tr>
