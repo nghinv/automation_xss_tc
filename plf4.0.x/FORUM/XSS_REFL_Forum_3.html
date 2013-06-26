@@ -21,42 +21,9 @@
 	<td>COMM_login.html</td>
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
-
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Forums</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Add Category</td>
-	<td></td>
-</tr>
-
-<tr>
-	<td>type</td>
-	<td>//input[@id='CategoryTitle']</td>
-	<td>cat2</td>
-</tr>
-
-<tr>
-	<td>click</td>
-	<td>css=div.controls &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=root</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Add</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>=== Add Category Description ===</td>
+	<td>include</td>
+	<td>COMM_FORUM_add_category.html</td>
 	<td></td>
 </tr>
 <tr>
@@ -65,29 +32,14 @@
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>include</td>
-	<td>COMM_assertAlertNotPresent.html</td>
-	<td>MSG_CODE=${MSG_CODE}</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Permissions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='UIPermissionInput']</td>
-	<td>root</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.btn</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
 	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
 </tr>
 <tr>
 	<td>include</td>
