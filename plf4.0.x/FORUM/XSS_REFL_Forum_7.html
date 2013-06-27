@@ -22,76 +22,14 @@
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Forums</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Add Forum</td>
-	<td></td>
-</tr>
-
-<tr>
-	<td>type</td>
-	<td>//input[@id='ForumTitle']</td>
-	<td>forum2</td>
-</tr>
-
-<tr>
-	<td>echo</td>
-	<td>=== Input Forums Description===</td>
+	<td>include</td>
+	<td>COMM_FORUM_add_forum.html</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>//textarea[@id='Description']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
-</tr>
-<tr>
-	<td>include</td>
-	<td>COMM_assertAlertNotPresent.html</td>
-	<td>MSG_CODE=${MSG_CODE}</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Moderation Options</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@id='AutoAddEmailNotify']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//textarea[@id='NotifyWhenAddPost']</td>
-	<td>email@gmail.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//textarea[@id='NotifyWhenAddTopic']</td>
-	<td>email@gmail.com</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Permissions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=span &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Close</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='UIPermissionInput']</td>
-	<td>boot</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -102,6 +40,11 @@
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
 	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
 </tr>
 <tr>
 	<td>include</td>
