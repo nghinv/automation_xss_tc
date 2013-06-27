@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_FORUM_add_forum</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_FORUM_add_forum</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_FORUM_add_forum</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Forums</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Forums</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Add Forum</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Forum</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='ForumTitle']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='ForumTitle']</td>
+	<td>test${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='Description']</td>
+	<td>forum forum</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Moderation Options</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@id='AutoAddEmailNotify']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='NotifyWhenAddPost']</td>
+	<td>${timestamp}@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='NotifyWhenAddTopic']</td>
+	<td>${timestamp}@gmail.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Permissions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPermissionInput']</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_FORUM_add_forum</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
