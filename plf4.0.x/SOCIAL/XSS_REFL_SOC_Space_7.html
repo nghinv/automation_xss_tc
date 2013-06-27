@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="https://www.google.com.vn/" />
-<title>XSS_REFL_SOC_Space_1</title>
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_SOC_Space_5</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_SOC_Space_1</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_SOC_Space_5</td></tr>
 </thead><tbody>
 <tr>
 	<td>echo</td>
@@ -37,29 +37,19 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>clickAndWait</td>
 	<td>link=Join a space</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//button[@type='button']</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>//button[@type='button']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=displayName</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
-	<td>XSSspace03</td>
+	<td>XSSspace07</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -83,37 +73,97 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>+++ Search Members+++</td>
+	<td>+++ Space Settings +++ </td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a:contains(&quot;Members&quot;)</td>
+	<td>css=a:contains(&quot;Space Settings&quot;)</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAt</td>
-	<td>css=a:contains(&quot;Members&quot;)</td>
+	<td>css=a:contains(&quot;Space Settings&quot;)</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>Space Members</td>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains(&quot;Navigations&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>css=a:contains(&quot;Navigations&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.addNodeCont &gt; button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='position')]</td>
-	<td>&lt;script&gt;alert(5303);&gt;/script&gt;</td>
+	<td>id=name</td>
+	<td>node5307</td>
 </tr>
 <tr>
-	<td>clickAt</td>
-	<td>//button[@id='SearchButton']</td>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains(&quot;Page Selector&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a:contains(&quot;Page Selector&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=pageName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=pageName</td>
+	<td>pageName5307</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=pageTitle</td>
+	<td>&lt;script&gt;alert(5307);&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#UIPageSelector &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>5303</td>
+	<td>5307</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[contains(@onclick,'CreatePage')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>5307</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
 	<td></td>
 </tr>
 <tr>
