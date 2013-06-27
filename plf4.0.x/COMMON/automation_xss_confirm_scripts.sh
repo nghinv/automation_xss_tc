@@ -105,5 +105,6 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
 done
 
 gzip user-extensions.js
-gzip selenium-server-standalone-2.25.0.jar
+rm -f selenium-server-standalone-2.25.0.jar
 gzip COMM_*
+gzip XSS*
