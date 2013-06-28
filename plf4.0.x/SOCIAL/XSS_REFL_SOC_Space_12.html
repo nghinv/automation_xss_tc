@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_SOC_Space_5</title>
+<title>XSS_REFL_SOC_Space_11</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_SOC_Space_5</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_SOC_Space_11</td></tr>
 </thead><tbody>
 <tr>
 	<td>echo</td>
@@ -47,9 +47,14 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayName</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>id=displayName</td>
-	<td>XSSspace09</td>
+	<td>XSSspace12</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -73,87 +78,42 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>+++ Space Settings +++ </td>
+	<td>+++ Search - Members +++</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a:contains(&quot;Space Settings&quot;)</td>
+	<td>css=a:contains(&quot;Members&quot;)</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAt</td>
-	<td>css=a:contains(&quot;Space Settings&quot;)</td>
+	<td>css=a:contains(&quot;Members&quot;)</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=a:contains(&quot;Navigations&quot;)</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAt</td>
-	<td>css=a:contains(&quot;Navigations&quot;)</td>
+	<td>id=skills</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.addNodeCont &gt; button.btn</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=name</td>
+	<td>id=skills</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=name</td>
-	<td>node5309</td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=a:contains(&quot;Page Selector&quot;)</td>
-	<td></td>
+	<td>id=skills</td>
+	<td>&lt;script&gt;alert(5312);&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=a:contains(&quot;Page Selector&quot;)</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=span.inputLarge.selectboxMedium &gt; #siteName</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>css=span.inputLarge.selectboxMedium &gt; #siteName</td>
-	<td>&lt;script&gt;alert(5309);&lt;/script&gt;</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=i.uiIconSearch.uiIconLightGray</td>
+	<td>id=SearchButton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>5309</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=OK</td>
+	<td>5312</td>
 	<td></td>
 </tr>
 <tr>
