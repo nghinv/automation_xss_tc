@@ -6,7 +6,9 @@ else
 fi
 
 TEST_MODULE=${1:-"./"}
-TEST_TARGET=${TEST_TARGET:-"http://localhost:8080"}
+TEST_TARGET_OPTION=${TEST_TARGET_OPTION:-"http://localhost:8080"}
+TEST_BROWSER_OPTION=${TEST_BROWSER_OPTION:-"*firefox /usr/lib/firefox/firefox-bin"}
+TEST_SELENIUM_VERSION_OPTION=${TEST_SELENIUM_VERSION_OPTION:-"selenium-server-standalone-2.25.0.jar"}
 
 automation_project_dir="/java/exo-working/automation_xss_tc/plf4.0.x/"
 if [ ! -d ${automation_project_dir} ]; then
@@ -42,6 +44,22 @@ sed -i "s/on DATE/on ${test_time_stamp}/g" ${test_result_file}
 echo "`date`,INFO:: build test suites and test result table"
 not_run_count=0
 
+# pretest script
+echo "`date`,INFO:: doing pretests"
+testscript=COMM_login.html
+echo "`date`, INFO:: testscript=${testscript} "
+testscript=`echo ${testscript} | sed -r 's#\.html$##g'`
+test_definition="<tr><td><a href=\"${testscript}.html\">${testscript}</a></td></tr>"
+testsuite=PRETEST_SUITE_${testscript}.html
+cp ${suite_template} ${testsuite}
+sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
+sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
+sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
+sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
+sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
+
+java -jar ${TEST_SELENIUM_VERSION_OPTION} -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
+
 for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL).*html$"`; do
   echo "`date`, INFO:: testscript=${testscript} "
   testscript=`echo ${testscript} | sed -r 's#\.html$##g'`
@@ -74,7 +92,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
      sed -i "s/input type=\"hidden\" id=\"init_element\" value=\"#\"/input type=\"hidden\" id=\"init_element\" value=\"RESULT_${testsuite}\"/g" ${test_result_file}
    fi
 
-   java -jar selenium-server-standalone-2.25.0.jar -userExtensions user-extensions.js -htmlSuite "*firefox /usr/lib/firefox/firefox-bin" "${TEST_TARGET}/" "./${testsuite}" "./RESULT_${testsuite}"
+   java -jar ${TEST_SELENIUM_VERSION_OPTION} -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
    sed -i "s/Test suite results/Test suite results for ${testsuite}/g" RESULT_${testsuite}
    RESULT_MSG="NOT_RUN_YET"
    RESULT_MSG_CLASS="status_not_run"
@@ -105,6 +123,6 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
 done
 
 gzip user-extensions.js
-rm -f selenium-server-standalone-2.25.0.jar
+rm -f selenium-server-standalone*
 gzip COMM_*
 gzip XSS*
