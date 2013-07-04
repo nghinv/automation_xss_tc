@@ -33,7 +33,37 @@
 </tr>
 <tr>
 	<td>openAndWait</td>
-	<td>/portal/login?initialURI=/portal/intranet&amp;username=${UserName}&amp;password=${UserPassword}</td>
+	<td>/portal/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>${UserName}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>${UserPassword}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
 	<td></td>
 </tr>
 <tr>

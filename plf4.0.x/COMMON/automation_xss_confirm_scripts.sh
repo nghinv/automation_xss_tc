@@ -46,7 +46,7 @@ not_run_count=0
 
 # pretest script
 echo "`date`,INFO:: doing pretests"
-testscript=COMM_login.html
+testscript=COMM_pretest.html
 echo "`date`, INFO:: testscript=${testscript} "
 testscript=`echo ${testscript} | sed -r 's#\.html$##g'`
 test_definition="<tr><td><a href=\"${testscript}.html\">${testscript}</a></td></tr>"
@@ -55,10 +55,10 @@ cp ${suite_template} ${testsuite}
 sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
 sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
 sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
-sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
-sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
+#sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
+#sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
 
-java -jar ${TEST_SELENIUM_VERSION_OPTION} -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
+java -jar ${TEST_SELENIUM_VERSION_OPTION} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
 
 for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL).*html$"`; do
   echo "`date`, INFO:: testscript=${testscript} "
@@ -92,7 +92,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
      sed -i "s/input type=\"hidden\" id=\"init_element\" value=\"#\"/input type=\"hidden\" id=\"init_element\" value=\"RESULT_${testsuite}\"/g" ${test_result_file}
    fi
 
-   java -jar ${TEST_SELENIUM_VERSION_OPTION} -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
+   java -jar ${TEST_SELENIUM_VERSION_OPTION} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
    sed -i "s/Test suite results/Test suite results for ${testsuite}/g" RESULT_${testsuite}
    RESULT_MSG="NOT_RUN_YET"
    RESULT_MSG_CLASS="status_not_run"
