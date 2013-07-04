@@ -86,13 +86,15 @@ row_notrun="<tr class=\"status_not_run\"><td><b>Not run yet:</b><td><b>"
 sed -i "s#${row_total}#${row_total}${total_count}${row_close}#g" ${test_result_file}
 sed -i "s#${row_notrun}.*${row_close}#${row_notrun}${not_run_count}${row_close}#g" ${test_result_file}
 
+chmod +x ../COMM/automation_xss_take_screen_shot.sh
 for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
    echo "`date`, >>> processing $testsuite "
    if [ ! ${init_element} -gt 0 ]; then
      init_element=1
      sed -i "s/input type=\"hidden\" id=\"init_element\" value=\"#\"/input type=\"hidden\" id=\"init_element\" value=\"RESULT_${testsuite}\"/g" ${test_result_file}
    fi
-
+   nohup ../COMM/automation_xss_take_screen_shot.sh ${test_result_dir}/RESULT_${testsuite} $$ 5 &
+   pid=$!
    java -jar ${TEST_SELENIUM_VERSION_OPTION} ${TEST_SELENIUM_OTHER_OPTIONS} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
    sed -i "s/Test suite results/Test suite results for ${testsuite}/g" RESULT_${testsuite}
    RESULT_MSG="NOT_RUN_YET"
@@ -121,6 +123,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
    sed -i "s#${row_failed}.*${row_close}#${row_failed}${failed_count}${row_close}#g" ${test_result_file}
    sed -i "s#${row_notrun}.*${row_close}#${row_notrun}${not_run_count}${row_close}#g" ${test_result_file}
    gzip ${testscript}
+   kill -9 $pid
 done
 
 gzip user-extensions.js
