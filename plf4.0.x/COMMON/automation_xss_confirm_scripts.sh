@@ -9,6 +9,7 @@ TEST_MODULE=${1:-"./"}
 TEST_TARGET_OPTION=${TEST_TARGET_OPTION:-"http://localhost:8080"}
 TEST_BROWSER_OPTION=${TEST_BROWSER_OPTION:-"*firefox /usr/lib/firefox/firefox-bin"}
 TEST_SELENIUM_VERSION_OPTION=${TEST_SELENIUM_VERSION_OPTION:-"selenium-server-standalone-2.25.0.jar"}
+TEST_SELENIUM_OTHER_OPTIONS=${TEST_SELENIUM_OTHER_OPTIONS:-"-timeout 60000"}
 
 automation_project_dir="/java/exo-working/automation_xss_tc/plf4.0.x/"
 if [ ! -d ${automation_project_dir} ]; then
@@ -58,7 +59,7 @@ sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#
 #sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
 #sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#g" ${testsuite}
 
-java -jar ${TEST_SELENIUM_VERSION_OPTION} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
+java -jar ${TEST_SELENIUM_VERSION_OPTION} ${TEST_SELENIUM_OTHER_OPTIONS} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
 
 for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL).*html$"`; do
   echo "`date`, INFO:: testscript=${testscript} "
@@ -92,7 +93,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
      sed -i "s/input type=\"hidden\" id=\"init_element\" value=\"#\"/input type=\"hidden\" id=\"init_element\" value=\"RESULT_${testsuite}\"/g" ${test_result_file}
    fi
 
-   java -jar ${TEST_SELENIUM_VERSION_OPTION} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
+   java -jar ${TEST_SELENIUM_VERSION_OPTION} ${TEST_SELENIUM_OTHER_OPTIONS} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
    sed -i "s/Test suite results/Test suite results for ${testsuite}/g" RESULT_${testsuite}
    RESULT_MSG="NOT_RUN_YET"
    RESULT_MSG_CLASS="status_not_run"
