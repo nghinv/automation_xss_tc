@@ -84,7 +84,7 @@ for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|
   sed -i "s#${test_definition_table}#<tr class=\"status_not_run\"><td><a href=\"\#\" onclick=\"show_detail('RESULT_SUITE_${testscript}.html')\">RESULT_SUITE_${testscript}</a></td><td>SUITE_${testscript}_NOT_RUN_YET</td><result></tr>${test_definition_table}#g" ${test_result_file}
   sed -i "s#${test_definition_table}#\n${test_definition_table}#g" ${test_result_file}
   not_run_count=$((not_run_count+1))
-  replace_assertion ${testscript}
+  replace_assertion ${testscript}.html
 done
 
 echo "`date`,INFO:: start testing"
