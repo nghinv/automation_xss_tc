@@ -6,7 +6,7 @@ interval=$3
   pushd ${output_prefix}_log
 counter=0
 #kill -9 `ps aux | grep shutter | awk '{print $2}'`
-sleep 15
+sleep 25
 while true; do
 
   if [ ! -d /proc/${parentpid} ]; then

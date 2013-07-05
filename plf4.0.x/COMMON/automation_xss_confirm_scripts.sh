@@ -35,6 +35,18 @@ function replace_assertion()
   fileinput=$1
   echo "`date`, replacing standard assertion to optimized assertion in $fileinput"
   assstring="<td>assertAlertNotPresent</td>"
+  assline=`grep -m 1 -n ${assstring} $fileinput  | grep -E -o "^[0-9]+"`
+  assline2=$((assline-1))
+  sed -i -r "${assline2}s#<tr>#<tr><td>pause</td><td>10000</td><td></td></tr><tr>#" $fileinput
+  #sed -i -r "${assline2}s#<td>(.*)</td>#${asssreplacetring}<td>MSG_CODE=\1</td>#" $fileinput
+  #sed -i "${assline3}d" $fileinput
+}
+
+function replace_assertion2()
+{
+  fileinput=$1
+  echo "`date`, replacing standard assertion to optimized assertion in $fileinput"
+  assstring="<td>assertAlertNotPresent</td>"
   asssreplacetring="<td>COMM_assertAlertNotPresent.html</td>"
   assline=`grep -m 1 -n ${assstring} $fileinput  | grep -E -o "^[0-9]+"`
   assline2=$((assline+1))
@@ -84,7 +96,7 @@ for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|
   sed -i "s#${test_definition_table}#<tr class=\"status_not_run\"><td><a href=\"\#\" onclick=\"show_detail('RESULT_SUITE_${testscript}.html')\">RESULT_SUITE_${testscript}</a></td><td>SUITE_${testscript}_NOT_RUN_YET</td><result></tr>${test_definition_table}#g" ${test_result_file}
   sed -i "s#${test_definition_table}#\n${test_definition_table}#g" ${test_result_file}
   not_run_count=$((not_run_count+1))
-  replace_assertion ${testscript}.html
+  #replace_assertion ${testscript}.html
 done
 
 echo "`date`,INFO:: start testing"
