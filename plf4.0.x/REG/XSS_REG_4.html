@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REG_4</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REG_4</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>==Login==</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>== Edit - SEO ==</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.Enable &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=description</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>&quot;/&gt;&lt;SCrIPT&gt;alert(&quot;Description_9003&quot;)&lt;/SCrIPT&gt;</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keywords</td>
+	<td>&quot;/&gt;&lt;SCrIPT&gt;alert(&quot;Keywords_9003&quot;)&lt;/SCrIPT&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>Description_9003</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>Keywords_9003</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>== Login by another account to confirm ==</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;amp;username=john&amp;amp;password=gtngtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>portal/intranet/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>Description_9003</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>Keywords_9003</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>==Logout==</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
