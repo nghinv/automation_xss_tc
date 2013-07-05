@@ -2,7 +2,13 @@
 output_prefix=$1
 parentpid=$2
 interval=$3
+  mkdir ${output_prefix}_log
+  pushd ${output_prefix}_log
+counter=0
+#kill -9 `ps aux | grep shutter | awk '{print $2}'`
+sleep 10
 while true; do
+
   if [ ! -d /proc/${parentpid} ]; then
     echo "`date`, the parent process id ${parentpid} does not exist, exit"
     exit 0
@@ -11,6 +17,9 @@ while true; do
     echo "`date`, the report done, exit"
     exit 0
   fi
-  sleep ${interval}
-  shutter -f -e -o ${output_prefix}_%Y%m%d_%NN.jpg>>/dev/null
+  sleep 2
+#$((interval - 2))
+  counter=$(( counter+1 ))
+  #timeout ${interval} shutter -f -o ./screen_${counter}.jpg
+  timeout $((interval*2)) import -window root ./screen_${counter}.jpg
 done
