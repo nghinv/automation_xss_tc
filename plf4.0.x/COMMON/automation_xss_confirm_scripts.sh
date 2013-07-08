@@ -28,7 +28,7 @@ rm -f SUITE_*.html
 
 cp ${automation_project_dir}/COMMON/tqa-secu-user-extensions.js ${test_result_dir}/user-extensions.js
 cp ${automation_project_dir}/COMMON/*.jar ${test_result_dir}
-find ${automation_project_dir}/${TEST_MODULE}/* -type f | grep -v -E "(^SUITE|/SUITE|COMMON|TESTS/)" | grep -E "(^|/)XSS_(STOR|REFL).*html$" | xargs -I {} cp {} ${test_result_dir}
+find ${automation_project_dir}/${TEST_MODULE}/* -type f | grep -v -E "(^SUITE|/SUITE|COMMON|TESTS/)" | grep -E "(^|/)XSS_(STOR|REFL|REG).*html$" | xargs -I {} cp {} ${test_result_dir}
 
 function replace_assertion()
 {
@@ -87,7 +87,7 @@ sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#
 
 java -jar ${TEST_SELENIUM_VERSION_OPTION} ${TEST_SELENIUM_OTHER_OPTIONS} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
 
-for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL).*html$"`; do
+for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL|REG).*html$"`; do
   echo "`date`, INFO:: testscript=${testscript} "
   testscript=`echo ${testscript} | sed -r 's#\.html$##g'`
   test_definition="<tr><td><a href=\"${testscript}.html\">${testscript}</a></td></tr>"
