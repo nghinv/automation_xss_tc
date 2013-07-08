@@ -28,7 +28,7 @@ rm -f SUITE_*.html
 
 cp ${automation_project_dir}/COMMON/tqa-secu-user-extensions.js ${test_result_dir}/user-extensions.js
 cp ${automation_project_dir}/COMMON/*.jar ${test_result_dir}
-find ${automation_project_dir}/${TEST_MODULE}/* -type f | grep -v -E "(^SUITE|/SUITE|COMMON|TESTS/)" | grep -E "(^|/)XSS_(STOR|REFL).*html$" | xargs -I {} cp {} ${test_result_dir}
+find ${automation_project_dir}/${TEST_MODULE}/* -type f | grep -v -E "(^SUITE|/SUITE|COMMON|TESTS/)" | grep -E "(^|/)XSS_(STOR|REFL|REG).*html$" | xargs -I {} cp {} ${test_result_dir}
 
 function replace_assertion()
 {
@@ -54,9 +54,16 @@ function replace_assertion2()
   sed -i -r "${assline}s#${assstring}#<td>include</td>#" $fileinput
   sed -i -r "${assline2}s#<td>(.*)</td>#${asssreplacetring}<td>MSG_CODE=\1</td>#" $fileinput
   sed -i "${assline3}d" $fileinput
+  sed -i -r "s/(&gt;)alert\((.*)\)/\1xalert\(\2,30000\)/g" $fileinput
+  if [ `grep -c -F "${assstring}" ${fileinput} ` -gt 0 ]; then
+    replace_assertion2 $fileinput
+  fi
 }
 pushd ${test_result_dir}
 
+for i in `find . -name "COMM_*.html"`; do
+    replace_assertion2 $i
+done
 
 test_definition_table="</tbody></table>"
 suite_template="../../COMMON/SUITE_COMM_suite_template.html"
@@ -87,7 +94,7 @@ sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#
 
 java -jar ${TEST_SELENIUM_VERSION_OPTION} ${TEST_SELENIUM_OTHER_OPTIONS} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
 
-for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL).*html$"`; do
+for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL|REG).*html$"`; do
   echo "`date`, INFO:: testscript=${testscript} "
   testscript=`echo ${testscript} | sed -r 's#\.html$##g'`
   test_definition="<tr><td><a href=\"${testscript}.html\">${testscript}</a></td></tr>"
@@ -96,7 +103,7 @@ for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|
   sed -i "s#${test_definition_table}#<tr class=\"status_not_run\"><td><a href=\"\#\" onclick=\"show_detail('RESULT_SUITE_${testscript}.html')\">RESULT_SUITE_${testscript}</a></td><td>SUITE_${testscript}_NOT_RUN_YET</td><result></tr>${test_definition_table}#g" ${test_result_file}
   sed -i "s#${test_definition_table}#\n${test_definition_table}#g" ${test_result_file}
   not_run_count=$((not_run_count+1))
-  #replace_assertion ${testscript}.html
+  replace_assertion2 ${testscript}.html
 done
 
 echo "`date`,INFO:: start testing"

@@ -16,7 +16,7 @@
 	<td>++ COMM_assertAlertNotPresent</td>
 	<td></td>
 </tr>
-<tr>
+<!--tr>
         <td>pause</td>
         <td>10000</td>
         <td></td>
@@ -28,9 +28,17 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>-- COMM_assertAlertNotPresent</td>
+	<td>COMM_assertAlertNotPresent</td>
 	<td></td>
+</tr-->
+
+<tr><td>assertTextNotPresent</td><td>exact:ALERT::${MSG_CODE}</td><td></td></tr>
+<tr>
+        <td>echo</td>
+        <td>-- COMM_assertAlertNotPresent</td>
+        <td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>
