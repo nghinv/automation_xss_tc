@@ -28,9 +28,35 @@ rm -f SUITE_*.html
 
 cp ${automation_project_dir}/COMMON/tqa-secu-user-extensions.js ${test_result_dir}/user-extensions.js
 cp ${automation_project_dir}/COMMON/*.jar ${test_result_dir}
-find ${automation_project_dir}/${TEST_MODULE}/* -type f | grep -v -E "(^SUITE|/SUITE|COMMON|TESTS/)" | grep -E "(^|/)XSS_(STOR|REFL).*html$" | xargs -I {} cp {} ${test_result_dir}
+find ${automation_project_dir}/${TEST_MODULE}/* -type f | grep -v -E "(^SUITE|/SUITE|COMMON|TESTS/)" | grep -E "(^|/)XSS_(STOR|REFL|REG).*html$" | xargs -I {} cp {} ${test_result_dir}
 
+function replace_assertion()
+{
+  fileinput=$1
+  echo "`date`, replacing standard assertion to optimized assertion in $fileinput"
+  assstring="<td>assertAlertNotPresent</td>"
+  assline=`grep -m 1 -n ${assstring} $fileinput  | grep -E -o "^[0-9]+"`
+  assline2=$((assline-1))
+  sed -i -r "${assline2}s#<tr>#<tr><td>pause</td><td>10000</td><td></td></tr><tr>#" $fileinput
+  #sed -i -r "${assline2}s#<td>(.*)</td>#${asssreplacetring}<td>MSG_CODE=\1</td>#" $fileinput
+  #sed -i "${assline3}d" $fileinput
+}
+
+function replace_assertion2()
+{
+  fileinput=$1
+  echo "`date`, replacing standard assertion to optimized assertion in $fileinput"
+  assstring="<td>assertAlertNotPresent</td>"
+  asssreplacetring="<td>COMM_assertAlertNotPresent.html</td>"
+  assline=`grep -m 1 -n ${assstring} $fileinput  | grep -E -o "^[0-9]+"`
+  assline2=$((assline+1))
+  assline3=$((assline+2))
+  sed -i -r "${assline}s#${assstring}#<td>include</td>#" $fileinput
+  sed -i -r "${assline2}s#<td>(.*)</td>#${asssreplacetring}<td>MSG_CODE=\1</td>#" $fileinput
+  sed -i "${assline3}d" $fileinput
+}
 pushd ${test_result_dir}
+
 
 test_definition_table="</tbody></table>"
 suite_template="../../COMMON/SUITE_COMM_suite_template.html"
@@ -61,7 +87,7 @@ sed -i "s#${test_definition_table}#${test_definition}\n${test_definition_table}#
 
 java -jar ${TEST_SELENIUM_VERSION_OPTION} ${TEST_SELENIUM_OTHER_OPTIONS} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
 
-for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL).*html$"`; do
+for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|/)XSS_(STOR|REFL|REG).*html$"`; do
   echo "`date`, INFO:: testscript=${testscript} "
   testscript=`echo ${testscript} | sed -r 's#\.html$##g'`
   test_definition="<tr><td><a href=\"${testscript}.html\">${testscript}</a></td></tr>"
@@ -70,6 +96,7 @@ for testscript in `find * -type f | grep -v -E "(^SUITE_|^COMM_)" | grep -E "(^|
   sed -i "s#${test_definition_table}#<tr class=\"status_not_run\"><td><a href=\"\#\" onclick=\"show_detail('RESULT_SUITE_${testscript}.html')\">RESULT_SUITE_${testscript}</a></td><td>SUITE_${testscript}_NOT_RUN_YET</td><result></tr>${test_definition_table}#g" ${test_result_file}
   sed -i "s#${test_definition_table}#\n${test_definition_table}#g" ${test_result_file}
   not_run_count=$((not_run_count+1))
+  #replace_assertion ${testscript}.html
 done
 
 echo "`date`,INFO:: start testing"
@@ -86,14 +113,14 @@ row_notrun="<tr class=\"status_not_run\"><td><b>Not run yet:</b><td><b>"
 sed -i "s#${row_total}#${row_total}${total_count}${row_close}#g" ${test_result_file}
 sed -i "s#${row_notrun}.*${row_close}#${row_notrun}${not_run_count}${row_close}#g" ${test_result_file}
 
-chmod +x ../COMM/automation_xss_take_screen_shot.sh
+chmod +x ../../COMMON/automation_xss_take_screen_shot.sh
 for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
    echo "`date`, >>> processing $testsuite "
    if [ ! ${init_element} -gt 0 ]; then
      init_element=1
      sed -i "s/input type=\"hidden\" id=\"init_element\" value=\"#\"/input type=\"hidden\" id=\"init_element\" value=\"RESULT_${testsuite}\"/g" ${test_result_file}
    fi
-   nohup ../COMM/automation_xss_take_screen_shot.sh ${test_result_dir}/RESULT_${testsuite} $$ 5 &
+   nohup ../../COMMON/automation_xss_take_screen_shot.sh ${test_result_dir}/RESULT_${testsuite} $$ 5 &
    pid=$!
    java -jar ${TEST_SELENIUM_VERSION_OPTION} ${TEST_SELENIUM_OTHER_OPTIONS} -ensureCleanSession -userExtensions user-extensions.js -htmlSuite "${TEST_BROWSER_OPTION}" "${TEST_TARGET_OPTION}/" "./${testsuite}" "./RESULT_${testsuite}"
    sed -i "s/Test suite results/Test suite results for ${testsuite}/g" RESULT_${testsuite}
@@ -123,7 +150,9 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
    sed -i "s#${row_failed}.*${row_close}#${row_failed}${failed_count}${row_close}#g" ${test_result_file}
    sed -i "s#${row_notrun}.*${row_close}#${row_notrun}${not_run_count}${row_close}#g" ${test_result_file}
    gzip ${testscript}
-   kill -9 $pid
+   if [ -d /proc/$pid ]; then
+    sleep 10; kill -9 $pid
+   fi
 done
 
 gzip user-extensions.js
