@@ -23,7 +23,12 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>=== My profile - current position ===</td>
+	<td>=== My profile - Contact Section - IMs ===</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/</td>
 	<td></td>
 </tr>
 <tr>
@@ -48,22 +53,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=#UIContactSection &gt; div.uiSocTitleBar.clearfix &gt; h4.titleWithBorder &gt; a &gt; i.uiIconEdit</td>
+	<td>//form[@id='UIContactSection']//a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#UIContactSection &gt; div.uiSocTitleBar.clearfix &gt; h4.titleWithBorder &gt; a &gt; i.uiIconEdit</td>
+	<td>//form[@id='UIContactSection']//a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//a[contains(@onclick,'&amp;objectId=3url')]</td>
+	<td>//form[@id='UIContactSection']/div[3]/div[3]/div/a/i</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//a[contains(@onclick,'&amp;objectId=3url')]</td>
+	<td>clickAt</td>
+	<td>//form[@id='UIContactSection']/div[3]/div[3]/div/a/i</td>
 	<td></td>
 </tr>
 <tr>
