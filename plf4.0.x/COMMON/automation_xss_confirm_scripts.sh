@@ -135,7 +135,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
     RESULT_MSG_CLASS="status_failed"
     failed_count=$((failed_count+1))
     failed_confirm_request=`head -1 ~/testsuite/${testplan_current_config} | sed -r "s/^([^\!]+\!)([^ ]+)(.*)/\1\2\.${testscript2}\3/g"`
-    if [ `echo "${TEST_MODULE}" | grep -c -E "[A-Za-z0-9]+"` -gt 0 ]; then
+    if [[ ! `echo ${failed_confirm_request} | grep -c -F ".${testscript2}"` -gt 0 && `echo "${TEST_MODULE}" | grep -c -E "[A-Za-z0-9]+"` -gt 0 ]]; then
       mkdir ../../${TEST_MODULE}.${testscript2}
       rm -f ../../${TEST_MODULE}.${testscript2}/*.html
       cp ../../${TEST_MODULE}/${testscript} ../../${TEST_MODULE}.${testscript2}
