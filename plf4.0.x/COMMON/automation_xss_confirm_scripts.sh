@@ -114,8 +114,11 @@ sed -i "s#${row_total}#${row_total}${total_count}${row_close}#g" ${test_result_f
 sed -i "s#${row_notrun}.*${row_close}#${row_notrun}${not_run_count}${row_close}#g" ${test_result_file}
 
 chmod +x ../../COMMON/automation_xss_take_screen_shot.sh
+
 for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
    echo "`date`, >>> processing $testsuite "
+   testscript=`echo ${testsuite} | sed -r 's#^SUITE_##g'`
+   testscript2=`echo ${testscript} | sed -r 's#\.html$##g'`
    if [ ! ${init_element} -gt 0 ]; then
      init_element=1
      sed -i "s/input type=\"hidden\" id=\"init_element\" value=\"#\"/input type=\"hidden\" id=\"init_element\" value=\"RESULT_${testsuite}\"/g" ${test_result_file}
@@ -131,6 +134,14 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
     RESULT_MSG="FAILED"
     RESULT_MSG_CLASS="status_failed"
     failed_count=$((failed_count+1))
+    failed_confirm_request=`head -1 ~/testsuite/${testplan_current_config} | sed -r "s/^([^\!]+\!)([^ ]+)(.*)/\1\2\.${testscript2}\3/g"`
+    if [ `echo "${TEST_MODULE}" | grep -c -E "[A-Za-z0-9]+"` -gt 0 ]; then
+      mkdir ../../${TEST_MODULE}.${testscript2}
+      rm -f ../../${TEST_MODULE}.${testscript2}/*.html
+      cp ../../${TEST_MODULE}/${testscript} ../../${TEST_MODULE}.${testscript2}
+      echo "${failed_confirm_request}">>~/testsuite/${testplan_current_config}
+      echo "${failed_confirm_request}">>~/testsuite/"${testplan}_CONFIRM_CURRENT_CONFIG"
+    fi
    fi
    
    test_result_failed=`grep -A 1 -B 3 -F "<td>result:</td>" ./RESULT_${testsuite} | grep -c -F "<td>passed</td>"`
@@ -140,7 +151,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
     passed_count=$((passed_count+1))
    fi
    not_run_count=$((total_count-passed_count-failed_count))
-   testscript=`echo ${testsuite} | sed -r 's#\^SUITE_##g'`
+   
    testsuite=`echo ${testsuite} | sed -r 's#\.html$##g'`
 
    
