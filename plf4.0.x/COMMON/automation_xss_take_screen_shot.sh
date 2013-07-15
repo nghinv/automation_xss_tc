@@ -20,5 +20,5 @@ while true; do
   sleep $((interval - 2))
   counter=$(( counter+1 ))
   #timeout ${interval} shutter -f -o ./screen_${counter}.jpg
-  timeout $((interval*2)) import -window root ./screen_${counter}.jpg
+  timeout $((interval*2)) import -window root ./screen_`echo "0000${counter}" | grep -o -E "[0-9]{3}$"`.png
 done
