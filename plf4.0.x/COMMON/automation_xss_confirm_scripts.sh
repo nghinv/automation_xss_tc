@@ -103,6 +103,7 @@ echo "`date`,INFO:: start testing"
 init_element=0
 passed_count=0
 failed_count=0
+xss_count=0
 total_count=${not_run_count}
 row_total="<tr class=\"status_total\"><td><b>Total:</b></td><td><b>"
 row_close="</b></td></tr>"
@@ -134,13 +135,26 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
     RESULT_MSG="FAILED"
     RESULT_MSG_CLASS="status_failed"
     failed_count=$((failed_count+1))
-    failed_confirm_request=`head -1 ~/testsuite/${testplan_current_config} | sed -r "s/^([^\!]+\!)([^ ]+)(.*)/\1\2\.${testscript2}\3/g"`
-    if [[ ! `echo ${failed_confirm_request} | grep -c -F ".${testscript2}.${testscript2}"` -gt 0 && `echo "${TEST_MODULE}" | grep -c -E "[A-Za-z0-9]+"` -gt 0 ]]; then
-      mkdir ../../${TEST_MODULE}.${testscript2}
-      rm -f ../../${TEST_MODULE}.${testscript2}/*.html
-      cp ../../${TEST_MODULE}/${testscript} ../../${TEST_MODULE}.${testscript2}
-      echo "${failed_confirm_request}">>~/testsuite/${testplan_current_config}
-      echo "${failed_confirm_request}">>~/testsuite/"${testplan}_CONFIRM_CURRENT_CONFIG"
+    
+    grep -A 3 ">assertAlertNotPresent<" ./RESULT_${testsuite}>/tmp/tmp_secu_report
+    grep -A 3 ">assertTextNotPresent<" ./RESULT_${testsuite}>>/tmp/tmp_secu_report
+    perl -i -pe "s/.*<td>/<td>/g;" -pe "s/<\/td>\n/<\/td>/g;" /tmp/tmp_secu_report
+    
+    
+    #<td>assertAlertNotPresent</td><td>5102</td><td>true</td></tr>
+    #<td>assertAlertNotPresent</td><td>5102</td><td></td></tr>"
+    if [ `grep -c -E "(<td>assertAlertNotPresent</td><td>[0-9]{4}[0-9]*</td><td>true</td></tr>|<td>assertTextNotPresent</td><td>.*ALERT::[0-9]{4}[0-9]*</td><td>true</td></tr>)" /tmp/tmp_secu_report` -gt 0 ]; then
+      RESULT_MSG="FAILED, XSS found"
+      xss_count=$((xss_count+1))
+    else
+      failed_confirm_request=`head -1 ~/testsuite/${testplan_current_config} | sed -r "s/^([^\!]+\!)([^ ]+)(.*)/\1\2\.${testscript2}\3/g"`
+      if [[ ! `echo ${failed_confirm_request} | grep -c -F ".${testscript2}.${testscript2}"` -gt 0 && `echo "${TEST_MODULE}" | grep -c -E "[A-Za-z0-9]+"` -gt 0 ]]; then
+	mkdir ../../${TEST_MODULE}.${testscript2}
+	rm -f ../../${TEST_MODULE}.${testscript2}/*.html
+	cp ../../${TEST_MODULE}/${testscript} ../../${TEST_MODULE}.${testscript2}
+	echo "${failed_confirm_request}">>~/testsuite/${testplan_current_config}
+	echo "${failed_confirm_request}">>~/testsuite/"${testplan}_CONFIRM_CURRENT_CONFIG"
+      fi
     fi
    fi
    
@@ -158,7 +172,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
    sed -i "s#${testsuite}_NOT_RUN_YET#${RESULT_MSG}#g" ${test_result_file}
    sed -i "s#<tr class=\"status_not_run\"><td><a href=\"\#\" onclick=\"show_detail('RESULT_${testsuite}.html#<tr class=\"${RESULT_MSG_CLASS}\" ><td><a href=\"\#\" onclick=\"show_detail('RESULT_${testsuite}.html#g" ${test_result_file}
    sed -i "s#${row_passed}.*${row_close}#${row_passed}${passed_count}${row_close}#g" ${test_result_file}
-   sed -i "s#${row_failed}.*${row_close}#${row_failed}${failed_count}${row_close}#g" ${test_result_file}
+   sed -i "s#${row_failed}.*${row_close}#${row_failed}${failed_count}(XSS=${xss_count})${row_close}#g" ${test_result_file}
    sed -i "s#${row_notrun}.*${row_close}#${row_notrun}${not_run_count}${row_close}#g" ${test_result_file}
    gzip ${testscript}
    if [ -d /proc/$pid ]; then
