@@ -138,7 +138,7 @@ for testsuite in `find SUITE_* -type f | grep -E "html$"`; do
     
     grep -A 3 ">assertAlertNotPresent<" ./RESULT_${testsuite}>/tmp/tmp_secu_report
     grep -A 3 ">assertTextNotPresent<" ./RESULT_${testsuite}>>/tmp/tmp_secu_report
-    perl -i -pe "s/.*<td>/<td>/g;" -pe "s/<\/td>\n/<\/td>/g;" /tmp/tmp_secu_report
+    perl -i -pe "s/.*<td>/<td>/g;" -pe "s/<\/td>\n/<\/td>/g;" -pe "s/<\/td>\r\n/<\/td>/g;" /tmp/tmp_secu_report
     
     
     #<td>assertAlertNotPresent</td><td>5102</td><td>true</td></tr>
