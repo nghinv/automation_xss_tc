@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_ECMS_CON_38</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_38</td></tr>
+</thead><tbody>
+<tr>
+	<td>store</td>
+	<td>2238</td>
+	<td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/portal/intranet/home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td.OfficeMiddleTDContainer.TDContainer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconPLF24x24Setup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sites Explorer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@onclick=&quot;javascript:ajaxGet('/portal/g/:platform:web-contributors/siteExplorer?portal:componentId=326b6775-e252-4fd0-8ec6-1e94c7852be3&amp;interactionstate=JBPNS_rO0ABXdJAAJvcAAAAAEAC0FkZERvY3VtZW50AAt1aWNvbXBvbmVudAAAAAEAGFVJQWN0aW9uQmFyX0FkZERvY3VtZW50XwAHX19FT0ZfXw**&amp;portal:type=action&amp;ajaxRequest=true')&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIcon64x64Templateexo_htmlFile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='name']</td>
+	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
