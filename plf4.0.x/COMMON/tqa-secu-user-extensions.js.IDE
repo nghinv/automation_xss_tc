@@ -233,8 +233,8 @@ IDEIncludeCommand.prototype.injectIncludeTestCommands = function(locator,include
     	  	} 
     	  } 
 
-	  new_target=getUnEscapsedText(new_target);
-	  new_value=getUnEscapsedText(new_value);
+	  new_target=getUnescapedText(new_target);
+	  new_value=getUnescapedText(new_value);
 	  
 	  LOG.debug("Including new command >>new_cmd=" + new_cmd + " >>new_target=" + new_target + " >>new_value=" + new_value);
           var newCommand =  new Command(new_cmd,new_target,new_value); 
@@ -252,7 +252,7 @@ IDEIncludeCommand.prototype.injectIncludeTestCommands = function(locator,include
     editor.view.refresh();//Must refresh to syncup UI
 };
 
-function getUnEscapsedText(inputText)
+function getUnescapedText(inputText)
 {
   var doc=window.document;
   var el=doc.createElement("div");
