@@ -232,14 +232,9 @@ IDEIncludeCommand.prototype.injectIncludeTestCommands = function(locator,include
     	  	  new_value = newCols[j].replace(/\s+$/g,"");//trim end \s
     	  	} 
     	  } 
-	  if ( new_cmd == "open" )
-	  {
-	    new_target = new_target.replace(/&amp;/g, '&');
-	    new_value = new_value.replace(/&amp;/g, '&');
-	  }
 
-	  new_target=unescape(new_target);
-	  new_value=unescape(new_value);
+	  new_target=getUnEscapsedText(new_target);
+	  new_value=getUnEscapsedText(new_value);
 	  
 	  LOG.debug("Including new command >>new_cmd=" + new_cmd + " >>new_target=" + new_target + " >>new_value=" + new_value);
           var newCommand =  new Command(new_cmd,new_target,new_value); 
@@ -257,6 +252,15 @@ IDEIncludeCommand.prototype.injectIncludeTestCommands = function(locator,include
     editor.view.refresh();//Must refresh to syncup UI
 };
 
+function getUnEscapsedText(inputText)
+{
+  var doc=window.document;
+  var el=doc.createElement("div");
+  el.innerHTML=inputText;
+  var ret=el.textContent;
+  el=null;
+  return ret;
+}
 
 Selenium.prototype.doInclude = function(locator, paramString) {
     LOG.debug(IDEIncludeCommand.LOG_PREFIX + " Version " + IDEIncludeCommand.VERSION);
