@@ -639,9 +639,9 @@ org.terracotta.quartz.skipUpdateCheck=true
 
 ###########################
 # validators
-gatein.validators.displayname.regexp=[a-zA-Z_0-9]+
-gatein.validators.displayname.format.message=validated
-gatein.validators.jobtitle.regexp=[a-zA-Z_0-9]+
-gatein.validators.jobtitle.format.message=validated
-gatein.validators.grouplabel.regexp=[a-zA-Z_0-9]+
-gatein.validators.grouplabel.format.message=validated
+gatein.validators.displayname.regexp=[a-zA-Z_0-9 \t]*
+#gatein.validators.displayname.format.message=validated
+gatein.validators.jobtitle.regexp=[a-zA-Z_0-9 \t]*
+#gatein.validators.jobtitle.format.message=validated
+gatein.validators.grouplabel.regexp=[a-zA-Z_0-9 \t]*
+#gatein.validators.grouplabel.format.message=validated

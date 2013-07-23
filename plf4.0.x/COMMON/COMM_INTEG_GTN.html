@@ -13,7 +13,47 @@
 </thead><tbody>
 <tr>
 	<td>echo</td>
-	<td>==NEW USER==</td>
+	<td>==Configure user ==</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1</td>
+	<td>message_code</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>&lt;script&gt;alert(1);&lt;/script&gt;</td>
+	<td>mal_script</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime()</td>
+	<td>timestamp</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>u${timestamp}</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>username=${username}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>g${timestamp}</td>
+	<td>groupname</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>m${timestamp}</td>
+	<td>membershipname</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>==NEW USER</td>
 	<td></td>
 </tr>
 <tr>
@@ -138,7 +178,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td> Only lowercase letters, digits, dot and underscore characters are allowed for the field &quot;User Name&quot;. The field &quot;User Name&quot; must end with a lowercase letter or digit instead of &quot;&gt;&quot;. The &quot;User Name&quot; field must start with a lowercase letter. </td>
+	<td>Only lowercase letters, digits, dot and underscore characters are allowed for the field &quot;User Name&quot;. The field &quot;User Name&quot; must end with a lowercase letter or digit instead of &quot;&gt;&quot;. The &quot;User Name&quot; field must start with a lowercase letter.</td>
 	<td></td>
 </tr>
 <tr>
@@ -228,7 +268,7 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>====Input INVALID for others</td>
+	<td>====Test Validation of displayname, jobtitle</td>
 	<td></td>
 </tr>
 <tr>
@@ -237,9 +277,54 @@
 	<td>${mal_script}</td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>displayname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=displayName</td>
+	<td>${username}</td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>id=user.jobtitle</td>
 	<td>${mal_script}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>jobtitle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user.jobtitle</td>
+	<td>Tester</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>====Input INVALID for others</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -298,7 +383,7 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>==NEW MEMBERSHIP==</td>
+	<td>==NEW MEMBERSHIP</td>
 	<td></td>
 </tr>
 <tr>
@@ -382,13 +467,18 @@
 	<td>${mal_script}</td>
 </tr>
 <tr>
+	<td>echo</td>
+	<td>====SAVE</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>css=button.btn</td>
 	<td></td>
 </tr>
 <tr>
 	<td>echo</td>
-	<td>==NEW GROUP==</td>
+	<td>==NEW GROUP</td>
 	<td></td>
 </tr>
 <tr>
@@ -487,6 +577,46 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForTextPresent</td>
+	<td>grouplabel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>grouplabel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=label</td>
+	<td>${groupname}</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>====SAVE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'${groupname}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${groupname}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>echo</td>
 	<td>==ADD USER TO GROUP</td>
 	<td></td>
@@ -504,6 +634,16 @@
 <tr>
 	<td>click</td>
 	<td>link=Save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>${username}@example.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${username}@example.com</td>
 	<td></td>
 </tr>
 </tbody></table>
