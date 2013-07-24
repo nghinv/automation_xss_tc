@@ -1,4 +1,11 @@
-#!/bin/bash -xv
+#!/bin/bash
+
+DEBUG_MODE=${DEBUG_MODE:-"false"}
+
+if [ ${DEBUG_MODE} == "true" ]; then
+  set -xv
+fi
+
 if [[ -z $1 || "x$1" == "x" ]]; then
   echo "`date`, going to run test on all the modules"
 else
