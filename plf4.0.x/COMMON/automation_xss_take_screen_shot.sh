@@ -2,7 +2,7 @@
 
 DEBUG_MODE=${DEBUG_MODE:-"false"}
 
-if [ ${DEBUG_MODE} == "true" ]; then
+if [ "${DEBUG_MODE}" == "true" ]; then
   set -xv
 fi
 
