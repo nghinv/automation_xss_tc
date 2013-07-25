@@ -12,76 +12,40 @@
 <tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_79</td></tr>
 </thead><tbody>
 <tr>
-	<td>open</td>
-	<td>/portal/intranet/home</td>
-	<td></td>
+	<td>store</td>
+	<td>2279</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=div.TRContainer.ClearFix</td>
-	<td></td>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>link=Administration</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Administration</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Administration</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Content Administration</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Metadata</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=i.uiIconEdit</td>
+	<td>include</td>
+	<td>COMM_ECMS_CON_metadata_edit.html</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=metadataLabel</td>
-	<td>Dublin Core ttt</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Dialog Template</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=dialogTemplate</td>
-	<td>eeeeeeeeeeeee</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=View Template</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=viewTemplate</td>
-	<td>rrrrrrrrrrrrrr</td>
+	<td>//input[@id='metadataLabel']</td>
+	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
 	<td></td>
 </tr>
-
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
