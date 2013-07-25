@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_STOR_1</title>
+<title>XSS_STOR_49</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_STOR_49</td></tr>
 </thead><tbody>
 <tr>
 	<td>echo</td>
@@ -18,12 +18,12 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>8028</td>
+	<td>8049</td>
 	<td>message_code</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>&lt;script&gt;alert(8028);&lt;/script&gt;</td>
+	<td>&lt;script&gt;alert(8049);&lt;/script&gt;</td>
 	<td>mal_script</td>
 </tr>
 <tr>
@@ -52,6 +52,16 @@
 	<td>membershipname</td>
 </tr>
 <tr>
+	<td>store</td>
+	<td>c${timestamp}</td>
+	<td>category</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>== Login &amp; create new user ==</td>
+	<td></td>
+</tr>
+<tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=root,UserPassword=gtngtn</td>
@@ -63,112 +73,57 @@
 </tr>
 <tr>
 	<td>echo</td>
-	<td>==TEST My Connections, tab My Connections</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>====root sends request</td>
+	<td>== Test Forum - New Message/Send to ==</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>/portal/intranet/connections/network/root</td>
+	<td>/portal/intranet/forum</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Everyone</td>
+	<td>link=Private Messages</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Everyone</td>
+	<td>click</td>
+	<td>link=Private Messages</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Search</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=Search</td>
-	<td>${username}</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=SearchButton</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>${username}@example.com</td>
+	<td>link=Compose New Message</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.pull-right</td>
+	<td>link=Compose New Message</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForTextPresent</td>
-	<td>Invitation Sent</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>====User2 accepts request</td>
-	<td></td>
-</tr>
-<tr>
-	<td>include</td>
-	<td>COMM_login.html</td>
-	<td>UserName=${username},UserPassword=gtngtn</td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/portal/intranet/connections/receivedInvitations/${username}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>root@localhost</td>
+	<td>Send to:</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//button[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextNotPresent</td>
-	<td>root@localhost</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>====root logins, test tab My Connections</td>
-	<td></td>
-</tr>
-<tr>
-	<td>include</td>
-	<td>COMM_login.html</td>
-	<td>UserName=root,UserPassword=gtngtn</td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/portal/intranet/connections/network/root</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>${username}@example.com</td>
+	<td>css=div.controls &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>== Logout ==</td>
 	<td></td>
 </tr>
 <tr>
