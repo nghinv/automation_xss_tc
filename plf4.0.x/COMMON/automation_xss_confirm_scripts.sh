@@ -26,8 +26,8 @@ fi
 test_time_stamp=`date +%y%m%d_%H%M%S`
 test_result_dir="${automation_project_dir}/TESTS/test_results_${test_time_stamp}"
 mkdir -p "${test_result_dir}"
-rm -f latestresult
-ln -s ${test_result_dir} latestresult
+rm -f ${TESTSCRIPT}_latestresult
+ln -s ${test_result_dir} ${TESTSCRIPT}_latestresult
 
 cp ${automation_project_dir}/COMMON/COMM_*.html ${test_result_dir}
 rm -f RESUL_SUITE_*.html
