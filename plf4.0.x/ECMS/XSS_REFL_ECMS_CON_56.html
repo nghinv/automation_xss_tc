@@ -37,13 +37,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>storeEval</td>
+	<td>window.jQuery(&quot;textarea&quot;)[0].id.replace(&quot;htmlData&quot;,&quot;&quot;)</td>
+	<td>fck_editor_id</td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>//textarea[@id='ContentCSS[18819887]']</td>
+	<td>//textarea[@id='ContentCSS[${fck_editor_id}]']</td>
 	<td>${timestamp}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//textarea[@id='ContentJS[18819887]']</td>
+	<td>//textarea[@id='ContentJS[${fck_editor_id}]']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
