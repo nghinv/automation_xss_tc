@@ -254,11 +254,20 @@ IDEIncludeCommand.prototype.injectIncludeTestCommands = function(locator,include
 
 function getUnescapedText(inputText)
 {
+  if (inputText.toString().search("\&") < 0)
+  {
+    return inputText
+  }
+  
   var doc=window.document;
+  //doc.createElement("body")
   var el=doc.createElement("div");
   el.innerHTML=inputText;
   var ret=el.textContent;
-  el=null;
+  delete el;
+  //alert(doc.body);
+  //doc.body.appendChild(el);
+  //el.parentNode.removeChild(el);
   return ret;
 }
 

@@ -12,7 +12,7 @@ interval=$3
   mkdir ${output_prefix}_log
   pushd ${output_prefix}_log
 counter=0
-sleep 25
+sleep 35
 while true; do
 
   if [ ! -d /proc/${parentpid} ]; then
@@ -24,6 +24,7 @@ while true; do
     exit 0
   fi
   sleep $((interval - 2))
-  counter=$(( counter+1 ))
-  timeout $((interval*2)) import -quality 40 -window root ./screen_`echo "0000${counter}" | grep -o -E "[0-9]{3}$"`.png
+  #counter=$(( counter+1 ))
+  
+  timeout $((interval*2)) import -quality 40 -window root ./screen_`date +%m%d_%H%M%S`.png
 done
