@@ -4,37 +4,42 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Forum_30</title>
+<title>XSS_REFL_Category_Edit_Common</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_30</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Category_Edit_Common</td></tr>
 </thead><tbody>
 <tr>
-	<td>store</td>
-	<td>4036</td>
-	<td>MSG_CODE</td>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>include</td>
-	<td>COMM_FORUM_Category_Edit_Common.html</td>
+	<td>open</td>
+	<td>/portal/intranet/</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=Description</td>
-	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
+	<td>clickAndWait</td>
+	<td>link=Forums</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button:contains(&quot;Save&quot;)</td>
+	<td>id=UIContextPopupMenu1</td>
 	<td></td>
 </tr>
 <tr>
-	<td>include</td>
-	<td>COMM_assertAlertNotPresent.html</td>
-	<td>MSG_CODE=${MSG_CODE}</td>
+	<td>click</td>
+	<td>//form[@id='UICategory']/table/caption/ul/li[5]/div/div/i[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=ul.dropdown-menu.uiCategoryPopupMenu &gt; li &gt; a</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>
