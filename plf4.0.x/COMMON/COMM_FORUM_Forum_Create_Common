@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Forum_Search_Common</title>
+<title>COMM_FORUM_Forum_Create_Common</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_Search_Common</td></tr>
+<tr><td rowspan="1" colspan="3">COMM_FORUM_Forum_Create_Common</td></tr>
 </thead><tbody>
 <tr>
 	<td>include</td>
@@ -28,19 +28,20 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=UIContextPopupMenu1</td>
+	<td>css=i.uiIconForumCreateForum</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=i.uiIconSearch</td>
-	<td></td>
+	<td>type</td>
+	<td>id=ForumTitle</td>
+	<td>New forum</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Advanced Search</td>
+	<td>css=button:contains(&quot;Save&quot;)</td>
 	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>
