@@ -47,14 +47,29 @@
 	<td>3000</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='ForumTitle']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>//input[contains @id='ForumTitle']</td>
-	<td>test${timestamp}</td>
+	<td>//input[@id='ForumTitle']</td>
+	<td>title${timestamp}</td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td></td>
+	<td>2000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='ForumOrder']</td>
+	<td>1</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>//textarea[@id='Description']</td>
-	<td>forum forum</td>
+	<td>description${timestamp}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -62,29 +77,29 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//input[@id='AutoAddEmailNotify']</td>
+	<td>setSpeed</td>
+	<td></td>
+	<td>2000</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#moderationOptions-tab&quot;).find('#AutoAddEmailNotify').attr('checked',false);</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//textarea[@id='NotifyWhenAddPost']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>//textarea[@id='NotifyWhenAddPost']</td>
-	<td>${timestamp}@gmail.com</td>
+	<td>post${timestamp}@exoplatform.com</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>//textarea[@id='NotifyWhenAddTopic']</td>
-	<td>${timestamp}@gmail.com</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Permissions</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='UIPermissionInput']</td>
-	<td>root</td>
+	<td>topic${timestamp}@exoplatform.com</td>
 </tr>
 <tr>
 	<td>echo</td>

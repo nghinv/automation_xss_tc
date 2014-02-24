@@ -14,8 +14,7 @@
 <tr>
 	<td>echo</td>
 	<td>== Login ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -24,28 +23,23 @@
 <tr>
 	<td>echo</td>
 	<td>== Create forum ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/forum</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//li[@id='AddCategory']/a</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAt</td>
 	<td>//li[@id='AddCategory']/a</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=CategoryTitle</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=CategoryTitle</td>
@@ -54,18 +48,14 @@
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>pause</td>
-	<td>5000</td>
-	<td></td>
-</tr>
+	<td>5000</td>	<td></td></tr>
 <tr>
 	<td>clickAt</td>
 	<td>//li[@id='AddForum']/a</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=ForumTitle</td>
@@ -74,48 +64,38 @@
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>== Create a poll ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=i.uiIconPLF24x24Add</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Poll</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Poll</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Next</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>pause</td>
-	<td>5000</td>
-	<td></td>
-</tr>
+	<td>5000</td>	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=Question</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>id=Question</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=Question</td>
@@ -134,33 +114,27 @@
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Options</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>&lt;script&gt;alert(&quot;PollQuestion_8017&quot;);&lt;/script&gt;</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>&lt;script&gt;alert(&quot;PollOption_8017&quot;);&lt;/script&gt;</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>== Logout ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

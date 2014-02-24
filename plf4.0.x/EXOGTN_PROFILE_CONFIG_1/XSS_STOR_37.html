@@ -14,12 +14,10 @@
 <tr>
 	<td>echo</td>
 	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle, grouplabel,groupmembership)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>store</td>
-	<td>8037</td>
-	<td>MSG_CODE</td>
+	<td>8037</td>	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -39,8 +37,7 @@
 <tr>
 	<td>echo</td>
 	<td>username=${username}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>store</td>
 	<td>g${timestamp}</td>
@@ -59,28 +56,23 @@
 <tr>
 	<td>include</td>
 	<td>COMM_INTEG_GTN.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>==TEST Contact Directory (mouse over avatar)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/connexions</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Contacts Directory</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=Search</td>
@@ -89,43 +81,35 @@
 <tr>
 	<td>click</td>
 	<td>id=SearchButton</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${username}@example.com</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Test Test</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>mouseOver</td>
 	<td>link=Test Test</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[@onclick='takeAction(this)']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

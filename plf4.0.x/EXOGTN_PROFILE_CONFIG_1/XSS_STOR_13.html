@@ -14,12 +14,10 @@
 <tr>
 	<td>echo</td>
 	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>store</td>
-	<td>8013</td>
-	<td>MSG_CODE</td>
+	<td>8013</td>	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -39,33 +37,27 @@
 <tr>
 	<td>echo</td>
 	<td>==Register new user</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>====First, input all valid (after that each field will be re-inputted for single validation)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Administration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Administration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Add Users</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=username</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=username</td>
@@ -104,8 +96,7 @@
 <tr>
 	<td>click</td>
 	<td>link=User Profile</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=user.name.given</td>
@@ -144,13 +135,11 @@
 <tr>
 	<td>click</td>
 	<td>link=Account Setting</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>====Test Validation of username, first, last, email</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=username</td>
@@ -159,18 +148,15 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>Only lowercase letters, digits, dot and underscore characters are allowed for the field &quot;User Name&quot;. The field &quot;User Name&quot; must end with a lowercase letter or digit instead of &quot;&gt;&quot;. The &quot;User Name&quot; field must start with a lowercase letter.</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=username</td>
@@ -184,18 +170,15 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>Only letters, spaces, &quot;-&quot; or &quot;'&quot; are allowed for the field &quot;First Name&quot;</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=firstName</td>
@@ -209,18 +192,15 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>Only letters, spaces, &quot;-&quot; or &quot;'&quot; are allowed for the field &quot;Last Name&quot;</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=lastName</td>
@@ -234,18 +214,15 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>Your email address is invalid. Please enter a different address.</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=email</td>
@@ -254,8 +231,7 @@
 <tr>
 	<td>echo</td>
 	<td>====Test Validation of displayname, jobtitle</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -264,18 +240,15 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>displayname</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -289,18 +262,15 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>jobtitle</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=user.jobtitle</td>
@@ -309,8 +279,7 @@
 <tr>
 	<td>echo</td>
 	<td>====Input INVALID for others</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=user.name.given</td>
@@ -344,83 +313,67 @@
 <tr>
 	<td>echo</td>
 	<td>====SAVE</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>You have registered a new account.</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>You have registered a new account.</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>==Go to Forum, Compose Private Message, Test User Selector screen</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/forum</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Private Messages</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Private Messages</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Compose New Message</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Compose New Message</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=div.controls &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${username}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>${username}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

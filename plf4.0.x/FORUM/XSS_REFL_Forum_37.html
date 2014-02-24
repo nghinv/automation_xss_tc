@@ -10,27 +10,28 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_Forum_30</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>Gotooneforum/Searchthisforum/AdvancedSearch/Createdbetween</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>4037</td>
-	<td>MSG_CODE</td>
+	<td>4037</td><td>MSG_CODE</td><!--td>4040</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_FORUM_Category_Edit_Common.html</td>
-	<td></td>
-</tr>
+	<td>COMM_FORUM_Forum_Search_Common.html</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@name='FromDateCreated']</td>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>id=UserPrivate</td>
+	<td>//input[@name='FromDateCreated']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button:contains(&quot;Save&quot;)</td>
-	<td></td>
-</tr>
+	<td>css=button:contains(&quot;Search&quot;)</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>

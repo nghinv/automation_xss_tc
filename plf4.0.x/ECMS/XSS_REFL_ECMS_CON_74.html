@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_ECMS_CON_74</title>
+<title>XSS_REFL_ECMS_CON_96</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_74</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_96</td></tr>
+</thead><tr><td>echo</td><td>ContentAdministration/Repository/NodeTypes/Add/PrimaryItemName</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2274</td>
-	<td>MSG_CODE</td>
+	<td>2274</td><td>MSG_CODE</td><!--td>2296</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -23,44 +22,17 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_ECMS_CON_doc_add_template.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=CSS</td>
-	<td></td>
-</tr>
+	<td>COMM_ECMS_CON_namespace_register.html</td>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>//textarea[@id='skin']</td>
+	<td>//input[@id='primaryItemName']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=i.uiIconAddPermission.uiIconLightGray</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Platform</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=ul.childrenContainer.nodeGroup &gt; li.node &gt; a.uiIconNode.collapseIcon</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=exact:*</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#UITemplateForm &gt; div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td>css=div.nodeTypeDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -69,8 +41,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 
 </tbody></table>
 </body>

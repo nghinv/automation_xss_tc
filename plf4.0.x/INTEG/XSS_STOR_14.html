@@ -13,8 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>store</td>
-	<td>8014</td>
-	<td>MSG_CODE</td>
+	<td>8014</td>	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -24,8 +23,7 @@
 <tr>
 	<td>echo</td>
 	<td>==User1 goes to Forum, sends Private Message to User2</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -34,53 +32,43 @@
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/forum</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=a:contains(&quot;Private Messages&quot;)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=a:contains(&quot;Private Messages&quot;)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Compose New Message</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Compose New Message</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=div.controls &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>root</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>root</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>id=root</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Add</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForValue</td>
 	<td>id=SendTo</td>
@@ -94,28 +82,21 @@
 <tr>
 	<td>waitForFrameToLoad</td>
 	<td>//iframe[@id='MailMessage___Frame']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>selectFrame</td>
 	<td>//iframe[@id='MailMessage___Frame']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>pause</td>
-	<td>10000</td>
-	<td></td>
-</tr>
+	<td>10000</td>	<td></td></tr>
 <tr>
 	<td>selectFrame</td>
 	<td>//iframe</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>pause</td>
-	<td>10000</td>
-	<td></td>
-</tr>
+	<td>10000</td>	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>xpath=//html/body</td>
@@ -124,33 +105,27 @@
 <tr>
 	<td>selectFrame</td>
 	<td>relative=top</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=#UIPrivateMessageForm &gt; div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>==User2 goes to Forum, tests Inbox</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -159,48 +134,39 @@
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/forum</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=a:contains(&quot;Private Messages&quot;)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=a:contains(&quot;Private Messages&quot;)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Inbox</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Inbox</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

@@ -10,11 +10,10 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_2</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>SiteExplorer/Linkdocument/Parametervalue</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2202</td>
-	<td>MSG_CODE</td>
+	<td>2202</td><td>MSG_CODE</td><!--td>2202</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -24,18 +23,15 @@
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/home</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Administration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Sites Explorer</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>//input[@id='address']</td>
@@ -49,8 +45,7 @@
 <tr>
 	<td>runScript</td>
 	<td>eXo.webui.UIForm.submitForm('${portal_componentid}#UIAddressBar','ChangeNode',true)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -59,8 +54,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

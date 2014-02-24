@@ -14,8 +14,7 @@
 <tr>
 	<td>echo</td>
 	<td>==Login==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -24,38 +23,31 @@
 <tr>
 	<td>echo</td>
 	<td>== XSS_REG_2 ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Administration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Administration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Groups and Roles</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Groups and Roles</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Membership Management</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Membership Management</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=name</td>
@@ -70,24 +62,20 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <!--Confirm result according to issue: SECURITY-64-->
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>XSS</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>==Logout==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 
 </tbody></table>
 </body>

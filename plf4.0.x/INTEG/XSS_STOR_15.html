@@ -10,12 +10,11 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_STOR_15</td></tr>
-</thead><tbody>
+</thead><tbody><tr><td>store</td><td>8015</td>	<td>MSG_CODE</td></tr>
 <tr>
 	<td>echo</td>
 	<td>== Login ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -24,83 +23,67 @@
 <tr>
 	<td>echo</td>
 	<td>== Create forum ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/forum</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//li[@id='AddCategory']/a</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAt</td>
 	<td>//li[@id='AddCategory']/a</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=CategoryTitle</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=CategoryTitle</td>
-	<td>Category_8015</td>
+	<td>Category_${MSG_CODE}</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>pause</td>
-	<td>5000</td>
-	<td></td>
-</tr>
+	<td>5000</td>	<td></td></tr>
 <tr>
 	<td>clickAt</td>
 	<td>//li[@id='AddForum']/a</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=ForumTitle</td>
-	<td>&lt;script&gt;alert(8015);&lt;/script&gt;</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>8015</td>
-	<td></td>
-</tr>
+	<td>${MSG_CODE}</td>	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Search ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//input[@id='inputValue']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//input[@id='inputValue']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>//input[@id='inputValue']</td>
-	<td>8015</td>
-</tr>
+	<td>${MSG_CODE}</td></tr>
 <tr>
 	<td>storeEval</td>
 	<td>window.jjQuery('#UIForumPortlet').parents(':eq(1)').attr('id');</td>
@@ -109,78 +92,60 @@
 <tr>
 	<td>echo</td>
 	<td>${portal_componentid}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>runScript</td>
 	<td>eXo.webui.UIForm.submitForm('${portal_componentid}#QuickSearchForm','Search',true)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>8015</td>
-	<td></td>
-</tr>
+	<td>${MSG_CODE}</td>	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>== Delete forum ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//a[@data-original-title='Home']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>pause</td>
-	<td>5000</td>
-	<td></td>
-</tr>
+	<td>5000</td>	<td></td></tr>
 <tr>
 	<td>clickAt</td>
-	<td>//a[contains(text(),'Category_8015')]</td>
-	<td></td>
-</tr>
+	<td>//a[contains(text(),'Category_${MSG_CODE}')]</td>
+	<td></td></tr>
 <tr>
 	<td>pause</td>
-	<td>5000</td>
-	<td></td>
-</tr>
+	<td>5000</td>	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//input[starts-with(@id,'forum')]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//form[@id='UICategory']/table/caption/ul/li[5]/div/div</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>id=UICategoryConfirm0</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=#UIForumPopupConfirmation &gt; div.PopupContent.popupContent &gt; div.uiAction.uiActionBorder &gt; button.btn.actionOK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertTextNotPresent</td>
-	<td>Category_8015</td>
-	<td></td>
-</tr>
+	<td>Category_${MSG_CODE}</td>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>== Logout ==</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 
 </tbody></table>
 </body>

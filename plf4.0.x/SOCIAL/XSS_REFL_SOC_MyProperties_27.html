@@ -10,12 +10,11 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_SOC_MyProperties_27</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>Adminbar/MyWiki/Add/EditPage/titlevalue</td><td></td></tr><tr><td>store</td><td>5427</td>	<td>MSG_CODE</td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Login ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -24,78 +23,63 @@
 <tr>
 	<td>echo</td>
 	<td>=== My Activity Stream - Comment ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Root Root</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Root Root</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=My Wiki</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=My Wiki</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[contains(@onclick,'#EditPage')]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//div[contains(@onclick,'#EditPage')]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//input[@id='titleInput']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>//input[@id='titleInput']</td>
-	<td>Wiki Home&lt;script&gt;alert(5427);&lt;/script&gt;</td>
+	<td>Wiki Home&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>5427</td>
-	<td></td>
-</tr>
+	<td>${MSG_CODE}</td>	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Log out ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

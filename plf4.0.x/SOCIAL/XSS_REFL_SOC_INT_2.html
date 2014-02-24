@@ -10,12 +10,11 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_SOC_INT_2</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>Activitystream/Link/Parametervalue</td><td></td></tr><tr><td>store</td><td>5102</td>	<td>MSG_CODE</td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Login ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -24,48 +23,38 @@
 <tr>
 	<td>echo</td>
 	<td>=== Share Activity Stream on Intranet ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAt</td>
 	<td>//a[@onclick='UIComposer.showLink()']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>//input[@id='InputLink']</td>
-	<td>http://exoplatform.com?&lt;script&gt;alert(5102);&lt;/script&gt;</td>
+	<td>http://exoplatform.com?&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>//button[@id='AttachButton']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>5102</td>
-	<td></td>
-</tr>
+	<td>${MSG_CODE}</td>	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//button[@id='ShareButton']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>5102</td>
-	<td></td>
-</tr>
+	<td>${MSG_CODE}</td>	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Log out ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

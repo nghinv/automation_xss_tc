@@ -37,8 +37,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>link=Private Messages</td>
+	<td>link=regexp:.*Private Messages</td>
 	<td></td>
 </tr>
 <tr>
@@ -55,6 +60,11 @@
 	<td>type</td>
 	<td>//input[@id='MailTitle']</td>
 	<td>title${timestamp}</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#MailMessage___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;message${timestamp}&quot;)</td>
+	<td></td>
 </tr>
 <tr>
 	<td>echo</td>

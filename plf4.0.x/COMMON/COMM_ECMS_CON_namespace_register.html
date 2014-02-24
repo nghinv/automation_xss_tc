@@ -27,6 +27,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>link=Administration</td>
 	<td></td>
@@ -43,7 +48,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Node Types</td>
+	<td>link=Namespaces</td>
 	<td></td>
 </tr>
 <tr>
@@ -52,19 +57,24 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>//input[@id='nodeTypeName']</td>
-	<td>name${timestamp}</td>
+	<td>setSpeed</td>
+	<td></td>
+	<td>3000</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='namespace']</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='primaryItemName']</td>
-	<td>itemname${timestamp}</td>
+	<td>//input[@id='namespace']</td>
+	<td>${timestamp}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='superTypes']</td>
-	<td>exo:commentHome</td>
+	<td>//input[@id='uri']</td>
+	<td>${timestamp}</td>
 </tr>
 <tr>
 	<td>echo</td>

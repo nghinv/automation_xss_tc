@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_ECMS_CON_goto_advancedSearch</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_ECMS_CON_goto_advancedSearch</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_ECMS_CON_goto_advancedSearch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sites Explorer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UISideBar']/div/div[1]/div[@class='uiSelectContent clearfix']/div[@data-original-title='Saved Searches']/i[@class='uiIconEcmsSavedSearchesMini']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UISideBar']/div[@class='uiResizableBlock']/div[@class='uiBox']/h6/a/i[@class='uiIconSearch uiIconLightGray']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UIECMSearch']/ul[@id='myTab']/li[1]/a[@href='#tab-UIContentNameSearch']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='keyword']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='keyword']</td>
+	<td>content${timestamp}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UIECMSearch']/ul[@id='myTab']/li[2]/a[@href='#tab-UISearchContainer']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='input']</td>
+	<td>content${timestamp}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//form[@id='UISimpleSearch']/div[@class='resizable']/a[@class='constrainLink']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='property1']</td>
+	<td>property1${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='containExactly']</td>
+	<td>ExactContain${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='property2']</td>
+	<td>property2${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='contain']</td>
+	<td>Contain${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='property3']</td>
+	<td>property3${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='notContain']</td>
+	<td>NotContain${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@id='ConstraintsForm']/div[@class='constraintOption form-inline'][5]/input[@name='startTime']</td>
+	<td>02/07/2014 11:20:43 </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@id='ConstraintsForm']/div[@class='constraintOption form-inline'][5]/input[@name='endTime']</td>
+	<td>02/21/2014 11:21:18 </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='docType']</td>
+	<td>Document Type${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='categoryType']</td>
+	<td>Category Type${timestamp}</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#UISimpleSearch&quot;).find('input:checkbox').attr('checked','checked');</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_ECMS_CON_goto_advancedSearch</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

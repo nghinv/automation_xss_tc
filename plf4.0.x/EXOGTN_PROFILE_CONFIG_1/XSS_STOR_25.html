@@ -14,12 +14,10 @@
 <tr>
 	<td>echo</td>
 	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle, grouplabel,groupmembership)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>store</td>
-	<td>8025</td>
-	<td>MSG_CODE</td>
+	<td>8025</td>	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -39,8 +37,7 @@
 <tr>
 	<td>echo</td>
 	<td>username=${username}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>store</td>
 	<td>g${timestamp}</td>
@@ -64,33 +61,27 @@
 <tr>
 	<td>include</td>
 	<td>COMM_INTEG_GTN.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>==TEST Page Mngmnt, New Page, Permission</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/g/:platform:administrators/administration/pageManagement</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Add New Page</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Add New Page</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=name</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=name</td>
@@ -99,108 +90,87 @@
 <tr>
 	<td>click</td>
 	<td>link=Permission Settings</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Add Permission</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Add Permission</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=${groupname}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=${groupname}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=${membershipname}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>/${groupname}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Edit Permission Settings</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Select Permission</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Select Permission</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>xpath=(//a[contains(text(),'${groupname}')])[3]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>xpath=(//a[contains(text(),'${groupname}')])[3]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>xpath=(//a[contains(text(),'${membershipname}')])[2]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>/${groupname}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=pageTitle</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>id=pageTitle</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=pageTitle</td>
@@ -209,23 +179,19 @@
 <tr>
 	<td>click</td>
 	<td>css=i.uiIconSearch.uiIconLightGray</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${membershipname}:/${groupname}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

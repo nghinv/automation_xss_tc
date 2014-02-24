@@ -10,12 +10,11 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_Wiki_8</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>AddPage/FromTemplate/Search/Searchvalue</td><td></td></tr><tr><td>store</td><td>6008</td>	<td>MSG_CODE</td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Login ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -24,47 +23,39 @@
 <tr>
 	<td>echo</td>
 	<td>=== Search from Template ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Wiki</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Wiki</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.dropdown.uiActionWithLabel</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=div.dropdown.uiActionWithLabel</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=From Template...</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=From Template...</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//button[contains(@onclick,'SearchTemplate')]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=TemplateSeachBox</td>
-	<td>&lt;script&gt;alert(6008);&lt;/script&gt;</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>keyPress</td>
@@ -73,19 +64,15 @@
 </tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>6008</td>
-	<td></td>
-</tr>
+	<td>${MSG_CODE}</td>	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Log out ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

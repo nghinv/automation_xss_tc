@@ -10,11 +10,10 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_EXOGTN_1</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>Administration/Addusers/AccountSettings/FirstName</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>3005</td>
-	<td>MSG_CODE</td>
+	<td>3004</td><td>MSG_CODE</td><!--td>3005</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -24,8 +23,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_EXOGTN_add_user.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=firstName</td>
@@ -34,13 +32,11 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.UIPopupWindow.UIDragObject.uiPopup</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -49,8 +45,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

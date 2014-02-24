@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_ECMS_CON_advancedSearch_editQuery</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_ECMS_CON_advancedSearch_editQuery</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_ECMS_CON_advancedSearch_editQuery</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_ECMS_CON_explorer_advSearch.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UIECMSearch']/ul[@id='myTab']/li[3]/a[@href='#tab-UIJCRAdvancedSearch']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='name']</td>
+	<td>aaaname${timestamp}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//textarea[@id='query']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='query']</td>
+	<td>select * from nt:base where jcr:path like '/sites/%' order by exo:dateCreated DESC</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//form[@id='UIJCRAdvancedSearch']/div[@class='uiAction uiActionBorder']/button[@class='btn'][2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UIECMSearch']/ul[@id='myTab']/li[4]/a[@href='#tab-UISavedQuery']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UISavedQuery']/table/tbody/tr[1]/td[5]/div[@class='actionContainer']/a[@data-original-title='Edit']/i[@class='uiIconEdit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_ECMS_CON_advancedSearch_editQuery</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

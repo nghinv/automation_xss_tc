@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_Forum_106</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_106</td></tr>
+</thead><tr><td>echo</td><td>Gotoonetopic/Quote/Message</td><td></td></tr>
+<tr>
+	<td>store</td>
+	<td>4096</td><td>MSG_CODE</td><!--td>4096</td>	<td>MSG_CODE</td-->
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_FORUM_goto_topic.html</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Quote</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='PostTitle']</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='PostTitle']</td>
+	<td>title${timestamp}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//td[@id='xEditingArea']</td>
+	<td></td></tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#MessageContent___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;&amp;lt;script&amp;gt;alert(${MSG_CODE})&amp;lt;/script&amp;gt;&quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction.uiActionBorder &gt; button:contains(&quot;Submit&quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+</tbody></table>
+</body>
+</html>

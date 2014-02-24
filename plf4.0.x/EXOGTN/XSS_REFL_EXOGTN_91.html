@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_EXOGTN_91</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_EXOGTN_91</td></tr>
+</thead><tr><td>echo</td><td>Administration/GroupsRoles/UserManagement/EditUserInfo/AccountInfo/ConfirmPassword</td><td></td></tr>
+<tr>
+	<td>store</td>
+	<td>3091</td><td>MSG_CODE</td><!--td>3091</td>	<td>MSG_CODE</td-->
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td></tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Groups and Roles</td>
+	<td></td></tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UIListUsersGird']/table/tbody/tr[2]/td[5]/a/i</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=changePassword</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>name=changePassword</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>id=confirmPassword</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

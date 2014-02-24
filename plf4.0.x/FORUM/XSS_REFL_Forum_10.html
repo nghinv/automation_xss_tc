@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Forum_10</title>
+<title>XSS_REFL_Forum_11</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_10</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_11</td></tr>
+</thead><tr><td>echo</td><td>AddForum/Permissions/Parametervalue</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>4010</td>
-	<td>MSG_CODE</td>
+	<td>4010</td><td>MSG_CODE</td><!--td>4011</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -24,23 +23,32 @@
 <tr>
 	<td>include</td>
 	<td>COMM_FORUM_add_forum.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Permissions</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='UIPermissionInput']</td>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>//textarea[@id='NotifyWhenAddTopic']</td>
+	<td>//input[@id='UIPermissionInput']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#UIPermissionInput&quot;).blur();</td>
+	<td></td></tr>
 <tr>
 	<td>click</td>
-	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td>css=button:contains(&quot;Add&quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=button:contains(&quot;Save&quot;)</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -49,8 +57,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

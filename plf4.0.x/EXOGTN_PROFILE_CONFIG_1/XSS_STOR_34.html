@@ -14,12 +14,10 @@
 <tr>
 	<td>echo</td>
 	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle, grouplabel,groupmembership)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>store</td>
-	<td>8034</td>
-	<td>MSG_CODE</td>
+	<td>8034</td>	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -39,8 +37,7 @@
 <tr>
 	<td>echo</td>
 	<td>username=${username}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>store</td>
 	<td>g${timestamp}</td>
@@ -59,33 +56,27 @@
 <tr>
 	<td>include</td>
 	<td>COMM_INTEG_GTN.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>==TEST Intranet Home (activity stream)</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Home</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>exact:What are you working on?</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

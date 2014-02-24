@@ -4,53 +4,34 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_ECMS_CON_99</title>
+<title>XSS_REFL_ECMS_CON_122</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_99</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_122</td></tr>
+</thead><tr><td>echo</td><td>SiteExplorer/SavedSearches/AdvancedSearch/AdvancedSearch/Show/HideConstraintForm/Property</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2299</td>
-	<td>MSG_CODE</td>
+	<td>2299</td><td>MSG_CODE</td><!--td>2299</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_login.html</td>
-	<td>UserName=root,UserPassword=gtngtn</td>
-</tr>
-<tr>
-	<td>include</td>
-	<td>COMM_ECMS_CON_namespace_register.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Property</td>
-	<td></td>
-</tr>
+	<td>COMM_ECMS_CON_goto_advancedSearch.html</td>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='propertyname']</td>
-	<td>${timestamp}</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='valueconstraints']</td>
-	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
+	<td>//input[@id='property1']</td>
+	<td>&amp;lt;script&amp;gt;alert(${MSG_CODE})&amp;lt;/script&amp;gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Node Type</td>
-	<td></td>
-</tr>
+	<td>//div[@id='ConstraintsForm']/div[@class='uiAction']/button[@class='btn btn-primary']</td>
+	<td></td></tr>
 <tr>
 	<td>click</td>
-	<td>css=div.nodeTypeDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td>//form[@id='UISimpleSearch']/div[@class='uiAction uiActionBorder']/button[@class='btn'][1]</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -59,9 +40,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

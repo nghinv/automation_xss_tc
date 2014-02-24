@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Forum_18</title>
+<title>XSS_REFL_Forum_19</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_18</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_19</td></tr>
+</thead><tr><td>echo</td><td>Administration/BBCodes/Add/EditBBCode/Description</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>4018</td>
-	<td>MSG_CODE</td>
+	<td>4018</td><td>MSG_CODE</td><!--td>4019</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -24,23 +23,20 @@
 <tr>
 	<td>include</td>
 	<td>COMM_FORUM_add_bbcode.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>//textarea[@id='Replacement']</td>
+	<td>//textarea[@id='Description']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>xpath=(//button[@type='button'])[2]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -49,8 +45,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

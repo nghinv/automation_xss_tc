@@ -57,9 +57,14 @@
 	<td>${timestamp}</td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>waitForElementPresent</td>
 	<td>//td[@id='xEditingArea']</td>
-	<td>abc${timestamp}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#notifyEmail___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;abc${timestamp}&quot;)</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -67,9 +72,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
+	<td>waitForElementPresent</td>
 	<td>//td[@id='xEditingArea']</td>
-	<td>def${timestamp}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#notifyEmailMoved___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;def${timestamp}&quot;)</td>
+	<td></td>
 </tr>
 <tr>
 	<td>echo</td>

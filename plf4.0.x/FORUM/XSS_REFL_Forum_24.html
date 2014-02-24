@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Forum_24</title>
+<title>XSS_REFL_Forum_27</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_24</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_27</td></tr>
+</thead><tr><td>echo</td><td>Administration/PrivateMessages/ComposeNewMessage/Message</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>4024</td>
-	<td>MSG_CODE</td>
+	<td>4024</td><td>MSG_CODE</td><!--td>4024</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -23,24 +22,20 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_FORUM_edit_setting.html</td>
-	<td></td>
-</tr>
+	<td>COMM_FORUM_private_message.html</td>
+	<td></td></tr>
 <tr>
-	<td>type</td>
-	<td>//textarea[@id='Signature']</td>
-	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
-</tr>
+	<td>waitForElementPresent</td>
+	<td>//td[@id='xEditingArea']</td>
+	<td></td></tr>
 <tr>
 	<td>storeEval</td>
-	<td>window.jjQuery('#UIForumUserSettingForm').parents(':eq(1)').attr('id');</td>
-	<td>portal_componentid</td>
-</tr>
+	<td>window.jjQuery(&quot;#MailMessage___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;&amp;lt;script&amp;gt;alert(${MSG_CODE})&amp;lt;/script&amp;gt;&quot;)</td>
+	<td></td></tr>
 <tr>
-	<td>runScript</td>
-	<td>eXo.webui.UIForm.submitForm('${portal_componentid}#UIForumUserSettingForm','Save',true)</td>
-	<td></td>
-</tr>
+	<td>click</td>
+	<td>css=button:contains(&quot;Send&quot;)</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -49,8 +44,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

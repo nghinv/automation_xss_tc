@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_ECMS_CON_61</title>
+<title>XSS_REFL_ECMS_CON_83</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_61</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_83</td></tr>
+</thead><tr><td>echo</td><td>ContentAdministration/Explorer/Views/AddView/Action/Add/TabName</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2261</td>
-	<td>MSG_CODE</td>
+	<td>2261</td><td>MSG_CODE</td><!--td>2283</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -23,24 +22,33 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_ECMS_CON_content_search.html</td>
-	<td></td>
-</tr>
+	<td>COMM_ECMS_CON_view_add_view.html</td>
+	<td></td></tr>
 <tr>
 	<td>click</td>
-	<td>id=content</td>
-	<td></td>
-</tr>
+	<td>link=Action</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.UITabList &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>id=addCategory</td>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>name=content</td>
+	<td>//input[@id='tabName']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.uiContentSearchForm &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td>css=#UITabForm &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction &gt; button.btn.btn-primary</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -49,8 +57,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

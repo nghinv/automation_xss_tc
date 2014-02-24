@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_ECMS_CON_76</title>
+<title>XSS_REFL_ECMS_CON_98</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_76</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_98</td></tr>
+</thead><tr><td>echo</td><td>ContentAdministration/Repository/NodeTypes/Add/Property/DefinitionName</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2276</td>
-	<td>MSG_CODE</td>
+	<td>2276</td><td>MSG_CODE</td><!--td>2298</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -23,19 +22,30 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_ECMS_CON_list_add_template.html</td>
-	<td></td>
-</tr>
+	<td>COMM_ECMS_CON_namespace_register.html</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Property</td>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>//textarea[@id='content']</td>
+	<td>//input[@id='propertyname']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=#UICLVTemplateForm_ContentTemplateContainer &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
+	<td>type</td>
+	<td>//input[@id='valueconstraints']</td>
+	<td>${timestamp}</td>
 </tr>
+<tr>
+	<td>click</td>
+	<td>link=Node Type</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.nodeTypeDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -44,8 +54,8 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
+
 </tbody></table>
 </body>
 </html>

@@ -10,11 +10,10 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_3</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>SiteExplorer/NewFolder/FolderName</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2203</td>
-	<td>MSG_CODE</td>
+	<td>2203</td><td>MSG_CODE</td><!--td>2203</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -24,38 +23,31 @@
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/home</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=td.OfficeMiddleTDContainer.TDContainer</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Administration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=Administration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=i.uiIconPLF24x24Setup</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Sites Explorer</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=li &gt; a.actionIcon</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>//input[@id='titleTextBox']</td>
@@ -64,8 +56,7 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -74,8 +65,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

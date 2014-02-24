@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_ECMS_CON_92</title>
+<title>XSS_REFL_ECMS_CON_114</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_92</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_114</td></tr>
+</thead><tr><td>echo</td><td>SiteExplorer/Nodepath/pathvalue</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2292</td>
-	<td>MSG_CODE</td>
+	<td>2292</td><td>MSG_CODE</td><!--td>2314</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -22,19 +21,26 @@
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>include</td>
-	<td>COMM_ECMS_CON_namespace_register.html</td>
-	<td></td>
-</tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td></tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sites Explorer</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='address']</td>
+	<td></td></tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='namespace']</td>
-	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
+	<td>//input[@id='address']</td>
+	<td>/&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=#UINamespaceForm &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
+	<td>keyPress</td>
+	<td>//input[@id='address']</td>
+	<td>\13</td>
 </tr>
 <tr>
 	<td>include</td>
@@ -44,8 +50,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

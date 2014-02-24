@@ -13,8 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>store</td>
-	<td>8004</td>
-	<td>MSG_CODE</td>
+	<td>8004</td>	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -24,8 +23,7 @@
 <tr>
 	<td>echo</td>
 	<td>==User1 logins, creates an event in group calendar</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -39,8 +37,7 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Calendar</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=Users</td>
@@ -54,13 +51,11 @@
 <tr>
 	<td>click</td>
 	<td>id=Event</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=eventName</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=eventName</td>
@@ -79,13 +74,11 @@
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>==User 2 (root) logins, tests Upcoming Event Portlet</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -94,23 +87,19 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>verifyTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

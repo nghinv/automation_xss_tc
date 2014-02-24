@@ -4,17 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_ECMS_CON_95</title>
+<title>XSS_REFL_ECMS_CON_118</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_95</td></tr>
-</thead><tbody>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_118</td></tr>
+</thead><tr><td>echo</td><td>SiteExplorer/Openonedocument/Tag/TagNames</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2295</td>
-	<td>MSG_CODE</td>
+	<td>2295</td><td>MSG_CODE</td><!--td>22118</td>	<td>MSG_CODE</td-->
 </tr>
 <tr>
 	<td>include</td>
@@ -23,19 +22,40 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_ECMS_CON_namespace_register.html</td>
-	<td></td>
+	<td>COMM_ECMS_CON_categories_add.html</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=#TaxonomyTreeMainForm &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[7]</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='actionName']</td>
+	<td>actionName${timestamp}</td>
+</tr>
+<tr>
+	<td>addSelection</td>
+	<td>name=lifecycle</td>
+	<td>label=Content Addition</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//input[@id='nodeTypeName']</td>
+	<td>//input[@id='nodetypes0']</td>
+	<td>app:category</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='targetPath']</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=div.nodeTypeDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td>xpath=(//button[@type='button'])[10]</td>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -44,9 +64,7 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

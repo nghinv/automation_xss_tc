@@ -10,12 +10,11 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_SOC_Space_1</td></tr>
-</thead><tbody>
+</thead><tr><td>echo</td><td>Gotoaspace/SpaceSettings/Settings/Description</td><td></td></tr><tr><td>store</td><td>5302</td>	<td>MSG_CODE</td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Login ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -24,23 +23,19 @@
 <tr>
 	<td>echo</td>
 	<td>=== Space settings ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>+++ Create a new space +++</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Join a space</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//button[@type='button']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -49,108 +44,87 @@
 <tr>
 	<td>click</td>
 	<td>link=Access &amp; Edit</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>name=UIRegistration</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//div[@id='UISpaceVisibility']/div/div[2]/div/label/span</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>+++ Space settings - Name +++</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=settings</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>id=settings</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=description</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>id=description</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>type</td>
 	<td>id=description</td>
-	<td>&lt;script&gt;alert(5302);&gt;/script&gt;</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&gt;/script&gt;</td>
 </tr>
 <tr>
 	<td>clickAt</td>
 	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>5302</td>
-	<td></td>
-</tr>
+	<td>${MSG_CODE}</td>	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>+++ Delete a space +++</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>click</td>
 	<td>//a[contains(@href,'portal/intranet/all-spaces')]</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Spaces Found</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAt</td>
 	<td>//button[@class='confirmPopup btn pull-right']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>clickAt</td>
 	<td>//a[@class='btn']</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Results are displayed in alphabetical order</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>echo</td>
 	<td>=== Log out ===</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_FORUM_send_question_by_email</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_FORUM_send_question_by_email</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_FORUM_send_question_by_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_FORUM_goto_one_question.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.pull-right.uiDropdownWithIcon.dropdown&gt; button.btn&gt;span:contains(&quot;More Actions&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Send</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='FromName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='FromName']</td>
+	<td>Root Root</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='From']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='From']</td>
+	<td>exoservice@gmail.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='To']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='To']</td>
+	<td>exoservice@gmail.com</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='Subject']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='Subject']</td>
+	<td>Email subject</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_FORUM_send_question_by_email</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
