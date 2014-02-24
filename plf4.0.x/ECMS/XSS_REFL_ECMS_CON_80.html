@@ -4,16 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_ECMS_CON_102</title>
+<title>XSS_REFL_ECMS_CON_80</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_102</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_80</td></tr>
 </thead><tr><td>echo</td><td>ContentAdministration/Repository/NodeTypes/Add/ChildNode/RequiredPrimaryType</td><td></td></tr>
 <tr>
 	<td>store</td>
-	<td>2280</td><td>MSG_CODE</td><!--td>22102</td>	<td>MSG_CODE</td-->
+	<td>2280</td><td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>include</td>
@@ -22,8 +22,19 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_ECMS_CON_namespace_register.html</td>
+	<td>COMM_ECMS_CON_nodetype_add.html</td>
 	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>pause</td>
+	<td>3000</td>	
+        <td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Child Node</td>
@@ -31,22 +42,24 @@
 <tr>
 	<td>type</td>
 	<td>//input[@id='childNodename']</td>
-	<td>childNodename${timestamp}</td>
+	<td>name${timestamp}</td>
 </tr>
+tr>
+	<td>type</td>
+	<td>id=defaultPrimaryType</td>
+	<td>app:application</td>
+</tr>
+
 <tr>
 	<td>type</td>
-	<td>//input[@id='defaultPrimaryType']</td>
-	<td>defaultPrimaryType${timestamp}</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='requiredPrimaryType']</td>
+	<td>id=requiredPrimaryType</td>
 	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Node Type</td>
-	<td></td></tr>
+	<td>css=div.childNodeDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=div.nodeTypeDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
