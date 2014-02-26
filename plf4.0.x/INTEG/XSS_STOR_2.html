@@ -11,15 +11,16 @@
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
 </thead><tbody><tr><td>store</td><td>8002</td>	<td>MSG_CODE</td></tr>
-<tr>
-	<td>store</td>
-	<td>space${MSG_CODE}</td>
-	<td>space_name</td>
-</tr>
+
 <tr>
 	<td>echo</td>
 	<td>==User1 logins, creates a space</td>
 	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -34,6 +35,10 @@
 	<td>link=Join a space</td>
 	<td></td></tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td></tr>
+<tr>
 	<td>click</td>
 	<td>//button[@type='button']</td>
 	<td></td></tr>
@@ -41,6 +46,11 @@
 	<td>waitForElementPresent</td>
 	<td>id=displayName</td>
 	<td></td></tr>
+<tr>
+	<td>store</td>
+	<td>space${timestamp}</td>
+	<td>space_name</td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -56,11 +66,19 @@
 	<td>link=Access &amp; Edit</td>
 	<td></td></tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td></tr>
+<tr>
 	<td>click</td>
 	<td>name=UIRegistration</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
 	<td></td></tr>
 <tr>
@@ -73,12 +91,20 @@
 	<td>UserName=mary,UserPassword=gtngtn</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td></tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>link=Join a space</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=Join a space</td>
+	<td></td></tr>
+<tr>
+	<td>setSpeed</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>

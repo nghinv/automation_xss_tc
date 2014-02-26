@@ -13,11 +13,6 @@
 </thead><tbody><tr><td>store</td><td>8012</td>	<td>MSG_CODE</td></tr>
 <tr>
 	<td>store</td>
-	<td>space${MSG_CODE}</td>
-	<td>space_name</td>
-</tr>
-<tr>
-	<td>store</td>
 	<td>wiki${MSG_CODE}</td>
 	<td>wiki_title</td>
 </tr>
@@ -25,6 +20,11 @@
 	<td>echo</td>
 	<td>==User1 logins, creates a space</td>
 	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -35,8 +35,12 @@
 	<td>link=Join a space</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=Join a space</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
 	<td>click</td>
@@ -47,6 +51,11 @@
 	<td>id=displayName</td>
 	<td></td></tr>
 <tr>
+	<td>store</td>
+	<td>space${timestamp}</td>
+	<td>space_name</td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>id=displayName</td>
 	<td>${space_name}</td>
@@ -56,11 +65,15 @@
 	<td>link=Access &amp; Edit</td>
 	<td></td></tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td></tr>
+<tr>
 	<td>click</td>
 	<td>name=UIRegistration</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
 	<td></td></tr>
 <tr>
@@ -72,8 +85,12 @@
 	<td>css=i.uiIconAppWikiPortlet.uiIconDefaultApp</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>css=i.uiIconAppWikiPortlet.uiIconDefaultApp</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -102,7 +119,7 @@
 	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
 	<td></td></tr>
 <tr>
@@ -118,12 +135,16 @@
 	<td>link=OK</td>
 	<td></td></tr>
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td></tr>
+<tr>
 	<td>type</td>
 	<td>id=titleInput</td>
 	<td>${wiki_title}</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
 	<td></td></tr>
 <tr>
@@ -145,8 +166,12 @@
 	<td>link=Join a space</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=Join a space</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -155,6 +180,10 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>link=${space_name}</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -170,7 +199,7 @@
 	<td>wiki${MSG_CODE}</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=wiki${MSG_CODE}</td>
 	<td></td></tr>
 <tr>
