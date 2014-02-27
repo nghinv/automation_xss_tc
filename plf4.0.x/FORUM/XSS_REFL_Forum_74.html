@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REFL_Forum_80</title>
+<title>XSS_REFL_Forum_74</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_80</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REFL_Forum_74</td></tr>
 </thead><tr><td>echo</td><td>Answer/SubmitQuestion/Details</td><td></td></tr>
 <tr>
 	<td>store</td>
@@ -19,6 +19,11 @@
 	<td>storeEval</td>
 	<td>new Date().getTime()</td>
 	<td>timestamp</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
 	<td>include</td>
@@ -38,6 +43,10 @@
 	<td>COMM_assertAlertNotPresent.html</td>
 	<td>MSG_CODE=${MSG_CODE}</td>
 </tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
 </tbody></table>
 </body>
 </html>

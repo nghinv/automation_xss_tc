@@ -31,16 +31,12 @@
 	<td>UserName=demo,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Join a space</td>
-	<td></td></tr>
-<tr>
-	<td>click</td>
-	<td>link=Join a space</td>
-	<td></td></tr>
-<tr>
-	<td>pause</td>
+	<td>setSpeed</td>
 	<td>3000</td>
+	<td></td></tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/all-spaces</td>
 	<td></td></tr>
 <tr>
 	<td>click</td>
@@ -148,11 +144,6 @@
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
 	<td></td></tr>
 <tr>
-	<td>assertText</td>
-	<td>id=titleInfo</td>
-	<td>${wiki_title}</td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>==User 2 (root) logins, joins space, tests Wiki page</td>
 	<td></td></tr>
@@ -162,28 +153,12 @@
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Join a space</td>
-	<td></td></tr>
-<tr>
-	<td>click</td>
-	<td>link=Join a space</td>
-	<td></td></tr>
-<tr>
-	<td>pause</td>
+	<td>setSpeed</td>
 	<td>3000</td>
 	<td></td></tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=${space_name}</td>
-	<td></td></tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=${space_name}</td>
-	<td></td></tr>
-<tr>
-	<td>pause</td>
-	<td>3000</td>
+	<td>openAndWait</td>
+	<td>/portal/g/:spaces:${space_name}/${space_name}</td>
 	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>

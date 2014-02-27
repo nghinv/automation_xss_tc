@@ -23,32 +23,42 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>My Space ${timestamp}</td>
+	<td>MySpace${timestamp}</td>
 	<td>Spacename</td>
 </tr>
 <tr>
-	<td>include</td>
-	<td>COMM_login.html</td>
-	<td>UserName=root,UserPassword=gtngtn</td>
+	<td>echo</td>
+	<td>++ COMM_FORUM_create_space</td>
+	<td></td>
 </tr>
 <tr>
-	<td>include</td>
-	<td>COMM_FORUM_create_space.html</td>
-	<td>SpaceName=${Spacename}</td>
-</tr>
-<tr>
-	<td>setSpeed</td>
-	<td>3000</td>
+	<td>clickAndWait</td>
+	<td>link=My Spaces</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=${Spacename}</td>
+	<td>css=button.btn:contains(&quot;Add New Space&quot;)</td>
 	<td></td>
 </tr>
 <tr>
-	<td>setSpeed</td>
-	<td>3000</td>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='displayName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='displayName']</td>
+	<td>${Spacename}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction &gt; button.btn:contains(&quot;Create&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_FORUM_create_space</td>
 	<td></td>
 </tr>
 <tr>
