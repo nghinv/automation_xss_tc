@@ -4,62 +4,52 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_STOR_1</title>
+<title>XSS_REG_SEC_87</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
-</thead><tbody><tr><td>store</td><td>9005</td>	<td>MSG_CODE</td></tr>
-<tr>
-	<td>echo</td>
-	<td>==Login==</td>
-	<td></td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REG_SEC_87</td></tr>
+</thead><tbody><tr>
+	<td>store</td>
+	<td>9015</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>echo</td>
-	<td>==Wiki, test QuickSearch, test AdvancedSearch==</td>
-	<td></td></tr>
-<tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/wiki</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=wikiSearchValue</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=wikiSearchValue</td>
 	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
-	<td>echo</td>
-	<td>====Test QuickSearch (it mentions .AdvancedSearch in the command but it is QuickSearch)</td>
-	<td></td></tr>
-<tr>
-	<td>runScript</td>
+	<td>storeEval</td>
 	<td>window.jjQuery('.AdvancedSearch').click();</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
-	<td></td></tr>
-<tr>
-	<td>assertTextPresent</td>
-	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
-	<td></td></tr>
-<tr>
-	<td>assertAlertNotPresent</td>
-	<td>${MSG_CODE}</td>	<td></td></tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>====Test AdvancedSearch</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=text</td>
@@ -67,27 +57,19 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=button.btn.btn-primary</td>
-	<td></td></tr>
+	<td>css=button.btn.btn-primary:contains('Search')</td>
+	<td></td>
+</tr>
 <tr>
-	<td>waitForTextPresent</td>
-	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
-	<td></td></tr>
-<tr>
-	<td>assertTextPresent</td>
-	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
-	<td></td></tr>
-<tr>
-	<td>assertAlertNotPresent</td>
-	<td>${MSG_CODE}</td>	<td></td></tr>
-<tr>
-	<td>echo</td>
-	<td>== Logout ==</td>
-	<td></td></tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

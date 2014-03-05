@@ -4,97 +4,103 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REG_4</title>
+<title>XSS_REG_SEC_91</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REG_4</td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REG_SEC_91</td></tr>
 </thead><tbody>
 <tr>
-	<td>echo</td>
-	<td>==Login==</td>
-	<td></td></tr>
+	<td>store</td>
+	<td>9016</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>echo</td>
-	<td>== Edit - SEO ==</td>
-	<td></td></tr>
-<tr>
 	<td>waitForElementPresent</td>
 	<td>link=Edit</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Edit</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
-	<td>css=div.Enable &gt; span</td>
-	<td></td></tr>
+	<td>//form[@id='UISEOToolbarForm']/div[@class='SEOToolbar']/div/span</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=description</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=description</td>
-	<td>&quot;/&gt;&lt;SCrIPT&gt;alert(&quot;Description_9003&quot;)&lt;/SCrIPT&gt;</td>
+	<td>&quot;/&gt;&lt;script&gt;alert(&quot;Description_9003&quot;)&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=keywords</td>
-	<td>&quot;/&gt;&lt;SCrIPT&gt;alert(&quot;Keywords_9003&quot;)&lt;/SCrIPT&gt;</td>
+	<td>&quot;/&gt;&lt;script&gt;alert(&quot;Keywords_9003&quot;)&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[2]</td>
-	<td></td></tr>
+	<td>css=button.btn:contains('Save')</td>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>Description_9003</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>Keywords_9003</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>== Login by another account to confirm ==</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/?portal:componentId=UIPortal&amp;amp;portal:action=Logout</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/login?initialURI=/portal/intranet&amp;amp;username=john&amp;amp;password=gtngtn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>openAndWait</td>
 	<td>portal/intranet/</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>Description_9003</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>Keywords_9003</td>
-	<td></td></tr>
-<tr>
-	<td>echo</td>
-	<td>==Logout==</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
-
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

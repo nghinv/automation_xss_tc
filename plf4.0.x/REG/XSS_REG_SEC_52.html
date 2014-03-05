@@ -4,42 +4,38 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REG_6</title>
+<title>XSS_REG_SEC_52</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REG_6</td></tr>
-</thead><tbody><tr><td>store</td><td>9006</td>	<td>MSG_CODE</td></tr>
-<tr>
-	<td>echo</td>
-	<td>==Login==</td>
-	<td></td></tr>
+<tr><td rowspan="1" colspan="3">XSS_REG_SEC_52</td></tr>
+</thead>
+<tbody><tr>
+	<td>store</td>
+	<td>9013</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>echo</td>
-	<td>== Go to URL's vector ==</td>
-	<td></td></tr>
-<tr>
 	<td>openAndWait</td>
 	<td>portal/j_security_check?initialURI=%3E%22;%3C/script%3E%3Cscript%3Ealert%28%27${MSG_CODE}%27%29%3C/script%3E&amp;j_username=HelloWorld&amp;j_password=wci-ticket-149642915</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
-	<td>assertAlertNotPresent</td>
-	<td>${MSG_CODE}</td>	<td></td></tr>
-<tr>
-	<td>echo</td>
-	<td>==Logout==</td>
-	<td></td></tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
-
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
