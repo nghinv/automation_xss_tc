@@ -26,11 +26,6 @@
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>begin$Template$</td>
-	<td>COMM_login.html</td>
-	<td></td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>++ COMM_login</td>
 	<td></td>
@@ -47,276 +42,6 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>++ COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>-- COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/login</td>
-	<td></td>
-</tr>
-<tr>
-	<td>windowMaximize</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//input[contains(@id,'username')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[contains(@id,'username')]</td>
-	<td>root</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='UIPortalLoginFormControl']</td>
-	<td>gtngtn</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=button.button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>-- COMM_login</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_login.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_login.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>++ COMM_login</td>
-	<td></td>
-</tr>
-<tr>
-	<td>setSpeed</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
-	<td></td>
-</tr>
-<tr>
-	<td>include</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>++ COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>-- COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>++ COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>-- COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/login</td>
-	<td></td>
-</tr>
-<tr>
-	<td>windowMaximize</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>refreshAndWait</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//input[contains(@id,'username')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[contains(@id,'username')]</td>
-	<td>root</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='UIPortalLoginFormControl']</td>
-	<td>gtngtn</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=button.button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>-- COMM_login</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_login.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>++ COMM_login</td>
-	<td></td>
-</tr>
-<tr>
-	<td>setSpeed</td>
-	<td>2000</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
-	<td></td>
-</tr>
-<tr>
-	<td>include</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>++ COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>-- COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_logout.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>++ COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>openAndWait</td>
-	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>echo</td>
-	<td>-- COMM_logout</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
 	<td>COMM_logout.html</td>
 	<td></td>
 </tr>
@@ -381,12 +106,212 @@
 	<td></td>
 </tr>
 <tr>
-	<td>include</td>
-	<td>COMM_ECMS_DOC_permission.html</td>
+	<td>echo</td>
+	<td>++ COMM_login</td>
 	<td></td>
 </tr>
 <tr>
-	<td>begin$Template$</td>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>windowMaximize</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>windowMaximize</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
 	<td>COMM_ECMS_DOC_permission.html</td>
 	<td></td>
 </tr>
@@ -397,11 +322,6 @@
 </tr>
 <tr>
 	<td>include</td>
-	<td>COMM_get_timestamp.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
 	<td>COMM_get_timestamp.html</td>
 	<td></td>
 </tr>
@@ -418,11 +338,6 @@
 <tr>
 	<td>echo</td>
 	<td>-- COMM_get_timestamp</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_get_timestamp.html</td>
 	<td></td>
 </tr>
 <tr>
@@ -476,16 +391,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>end$Template$</td>
-	<td>COMM_ECMS_DOC_permission.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_ECMS_DOC_permission.html</td>
-	<td></td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>++ COMM_ECMS_DOC_permission</td>
 	<td></td>
@@ -496,11 +401,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>begin$Template$</td>
-	<td>COMM_get_timestamp.html</td>
-	<td></td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>++ COMM_get_timestamp</td>
 	<td></td>
@@ -516,16 +416,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>end$Template$</td>
-	<td>COMM_get_timestamp.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_get_timestamp.html</td>
-	<td></td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>++ COMM_get_timestamp</td>
 	<td></td>
@@ -538,11 +428,6 @@
 <tr>
 	<td>echo</td>
 	<td>-- COMM_get_timestamp</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_get_timestamp.html</td>
 	<td></td>
 </tr>
 <tr>
@@ -596,11 +481,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>end$Template$</td>
-	<td>COMM_ECMS_DOC_permission.html</td>
-	<td></td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>++ COMM_ECMS_DOC_permission</td>
 	<td></td>
@@ -611,11 +491,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>begin$Template$</td>
-	<td>COMM_get_timestamp.html</td>
-	<td></td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>++ COMM_get_timestamp</td>
 	<td></td>
@@ -631,16 +506,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>end$Template$</td>
-	<td>COMM_get_timestamp.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>begin$Template$</td>
-	<td>COMM_get_timestamp.html</td>
-	<td></td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>++ COMM_get_timestamp</td>
 	<td></td>
@@ -653,11 +518,6 @@
 <tr>
 	<td>echo</td>
 	<td>-- COMM_get_timestamp</td>
-	<td></td>
-</tr>
-<tr>
-	<td>end$Template$</td>
-	<td>COMM_get_timestamp.html</td>
 	<td></td>
 </tr>
 <tr>
