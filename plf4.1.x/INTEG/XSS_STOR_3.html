@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_STOR_3</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_STOR_3</td></tr>
+</thead><tbody><tr><td>store</td><td>8003</td>	<td>MSG_CODE</td></tr>
+<tr>
+	<td>echo</td>
+	<td>== Login ==</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>== Upload a file ==</td>
+	<td></td></tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.uiIconPLF24x24Add</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconPLF24x24Add</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Upload a File</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Upload a File</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.btn.dropdown-toggle &gt; span</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.btn.dropdown-toggle &gt; span</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Personal Documents</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Personal Documents</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Public</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Public</td>
+	<td></td></tr>
+<tr>
+	<td>typeAndWait</td>
+	<td>id=file</td>
+	<td>/java/exo-working/automation_xss_tc/plf4.0.x/COMMON/%3Cscript%3Ealert(${MSG_CODE})%3B%3C%2Fscript%3E.txt</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;.txt</td>
+	<td></td></tr>
+<tr>
+	<td>clickAt</td>
+	<td>//button[@type='button']</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>== Select Relation ==</td>
+	<td></td></tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/documents</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Relations</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Relations</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Select Relation</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Select Relation</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains(&quot;Users &quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=a:contains(&quot;Users &quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=r___</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=ro___</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=roo___</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=root</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//ul[@class='nodeGroup']/li[3]/a[@class='collapseIcon uiIconEcmsFolderDefault uiIconEcmsnt_unstructured']</td>
+	<td></td></tr>
+<tr>
+	<td>clickAt</td>
+	<td>//ul[@class='nodeGroup']/li[3]/a[@class='collapseIcon uiIconEcmsFolderDefault uiIconEcmsnt_unstructured']</td>
+	<td></td></tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>${MSG_CODE}</td>	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>== Logout ==</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

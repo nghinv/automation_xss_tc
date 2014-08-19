@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_EXOGTN_add_user</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_EXOGTN_add_user</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_EXOGTN_add_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add Users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>test${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Confirmpassword</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=firstName</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=lastName</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=displayName</td>
+	<td>user ${timestamp} display</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>t${timestamp}@local.com</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>&gt;&gt;to submit via &quot;Save&quot; button::click|css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>waitForTextPresent|You have registered a new account.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>&gt;&gt;click OK to user created message::click|link=OK</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_EXOGTN_add_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>default_warning_form:waitForElementPresent|css=div.UIPopupWindow.UIDragObject.uiPopup</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

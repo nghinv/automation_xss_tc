@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_ECMS_DOC_properties</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_ECMS_DOC_properties</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_ECMS_DOC_properties</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Documents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Documents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=driveAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=driveAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.TRContainer.clearfix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Personal Documents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Personal Documents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Properties</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add New Property</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td></td>
+	<td>3000</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='name']</td>
+	<td>${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='value0']</td>
+	<td>${timestamp}</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_ECMS_DOC_properties</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

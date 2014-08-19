@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_EXOGTN_edit_user_profile</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_EXOGTN_edit_user_profile</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_EXOGTN_edit_user_profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Groups and Roles</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Groups and Roles</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[@data-original-title='Edit User Info'][1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@data-original-title='Edit User Info'][1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=User Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=User Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='user.name.given']</td>
+	<td>given ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='user.name.family']</td>
+	<td>family ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='user.name.nickName']</td>
+	<td>nickName ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='user.bdate']</td>
+	<td>4/5/2014</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='user.employer']</td>
+	<td>employer ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='user.department']</td>
+	<td>department ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='user.jobtitle']</td>
+	<td>job ${timestamp}</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_EXOGTN_edit_user_profile</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

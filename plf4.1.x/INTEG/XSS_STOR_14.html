@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_STOR_1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
+</thead><tbody>
+<tr>
+	<td>store</td>
+	<td>8014</td>	<td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>&lt;script&gt;alert(8014);&lt;/script&gt;</td>
+	<td>mal_script</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>==User1 goes to Forum, sends Private Message to User2</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=demo,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/forum</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains(&quot;Private Messages&quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=a:contains(&quot;Private Messages&quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Compose New Message</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Compose New Message</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.controls &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
+	<td></td></tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>root</td>
+	<td></td></tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>root</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>id=root</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Add</td>
+	<td></td></tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=SendTo</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=MailTitle</td>
+	<td>${mal_script}</td>
+</tr>
+<tr>
+	<td>waitForFrameToLoad</td>
+	<td>//iframe[@id='MailMessage___Frame']</td>
+	<td></td></tr>
+<tr>
+	<td>selectFrame</td>
+	<td>//iframe[@id='MailMessage___Frame']</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>	<td></td></tr>
+<tr>
+	<td>selectFrame</td>
+	<td>//iframe</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>xpath=//html/body</td>
+	<td>XSS_STOR_14</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=OK</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=#UIPrivateMessageForm &gt; div.uiAction &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>==User2 goes to Forum, tests Inbox</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/forum</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a:contains(&quot;Private Messages&quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=a:contains(&quot;Private Messages&quot;)</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Inbox</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Inbox</td>
+	<td></td></tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>${mal_script}</td>
+	<td></td></tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${mal_script}</td>
+	<td></td></tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>${message_code}</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

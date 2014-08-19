@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_ECMS_DOC_34</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_DOC_34</td></tr>
+</thead><tr><td>echo</td><td>Action/AddactionNodeTypes/Search/Searchvalue</td><td></td></tr>
+<tr>
+	<td>store</td>
+	<td>2129</td><td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_ECMS_DOC_action.html</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.controls.clearfix &gt; a.actionIcon</td>
+	<td></td></tr>
+<tr>
+	<td>setSpeed</td>
+	<td></td>	<td>3000</td></tr>
+
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='NodeTypeText']</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='NodeTypeText']</td>
+	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>keyPress</td>
+	<td>//input[@id='NodeTypeText']</td>
+	<td>\13</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.PopupContent.popupContent &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

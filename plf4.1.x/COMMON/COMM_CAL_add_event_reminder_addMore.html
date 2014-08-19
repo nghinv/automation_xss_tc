@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_CAL_add_event_reminder_addMore</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_CAL_add_event_reminder_addMore</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_CAL_add_event_reminder_addMore</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Calendar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Calendar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@id='UIActionBarQuickAddEvent']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//form[@id='UIQuickAddEvent']/div[@class='control-group']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//form[@id='UIQuickAddEvent']/div[@class='control-group']/div/input[@id='eventName']</td>
+	<td>Title ${timestamp}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//form[@id='UIQuickAddEvent']/div[@class='control-group']/div/textarea[@id='description']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//form[@id='UIQuickAddEvent']/div[@class='control-group']/div/textarea[@id='description']</td>
+	<td>Description ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//form[@id='UIQuickAddEvent']/div[4]/div[@class='controls']/div[1]/input[@name='from']</td>
+	<td>01/12/2014</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//form[@id='UIQuickAddEvent']/div[5]/div[@class='controls']/div[1]/input[@name='to']</td>
+	<td>03/12/2014</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//form[@id='UIQuickAddEvent']/div[4]/div[@class='controls']/div[2]/div/input[@class='UIComboboxInput']</td>
+	<td>01:30</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//form[@id='UIQuickAddEvent']/div[4]/div[@class='controls']/div[2]/div/input[@class='UIComboboxInput']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//form[@id='UIQuickAddEvent']/div[5]/div[@class='controls']/div[2]/div/input[@class='UIComboboxInput']</td>
+	<td>01:30</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//form[@id='UIQuickAddEvent']/div[5]/div[@class='controls']/div[2]/div/input[@class='UIComboboxInput']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#UIQuickAddEventPopupWindow &gt; div.PopupContent.popupContent &gt; div &gt; div.uiAction &gt; button.btn:contains('More Details')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UIPopupAddEventContainer']/div/ul/li/a[@data-target='#eventReminder-tab']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add More</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='Quick Search']</td>
+	<td>Search User</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_CAL_add_event_reminder_addMore</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

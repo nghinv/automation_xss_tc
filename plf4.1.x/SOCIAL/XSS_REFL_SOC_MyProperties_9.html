@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_SOC_MyProperties_9</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_SOC_MyProperties_9</td></tr>
+</thead><tr><td>echo</td><td>Adminbar/Myprofile/Experience/Edit/Position</td><td></td></tr><tr><td>store</td><td>5409</td>	<td>MSG_CODE</td></tr>
+<tr>
+	<td>echo</td>
+	<td>=== Login ===</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== My profile - Experience ===</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Root Root</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Root Root</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=My Profile</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=My Profile</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//form[@id='UIExperienceSection']//a[contains(@onclick,'Edit')]</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>//form[@id='UIExperienceSection']//a[contains(@onclick,'Edit')]</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//form[@id='UIExperienceSection']//a[contains(@onclick,'Add')]</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>//form[@id='UIExperienceSection']//a[contains(@onclick,'Add')]</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//form[@id='UIExperienceSection']//input[starts-with(@id,'position')]</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>//form[@id='UIExperienceSection']//input[starts-with(@id,'position')]</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td></tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>${MSG_CODE}</td>	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td></tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;[id^='position']&quot;).val('');</td>
+	<td></td></tr>
+<tr>
+	<td>clickAt</td>
+	<td>//button[contains(@onclick,'Cancel')]</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>=== Log out ===</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_STOR_48</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_STOR_48</td></tr>
+</thead><tbody><tr><td>store</td><td>8048</td>	<td>MSG_CODE</td></tr>
+<tr>
+	<td>echo</td>
+	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle, grouplabel,groupmembership)</td>
+	<td></td></tr>
+<tr>
+	<td>store</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
+	<td>mal_script</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime()</td>
+	<td>timestamp</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>u${timestamp}</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>username=${username}</td>
+	<td></td></tr>
+<tr>
+	<td>store</td>
+	<td>g${timestamp}</td>
+	<td>groupname</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>m${timestamp}</td>
+	<td>membershipname</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>c${timestamp}</td>
+	<td>category</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>== Login &amp; create new user ==</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_INTEG_GTN.html</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>== Test Forum - permission tab ==</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>=== Add category ==</td>
+	<td></td></tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Forums</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Add Category</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Category</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>id=CategoryTitle</td>
+	<td>${category}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>=== Add forum ===</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Add Forum</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Forum</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Permissions</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
+	<td></td></tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>${MSG_CODE}</td>	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>== Logout ==</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>
