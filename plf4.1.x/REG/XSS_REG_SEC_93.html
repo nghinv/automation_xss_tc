@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_STOR_1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
+</thead><tbody>
+<tr>
+	<td>store</td>
+	<td>9017</td>
+	<td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>user9008</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add Users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${username}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Confirmpassword</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=firstName</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=lastName</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=displayName</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>${username}@example.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=${username},UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=My Dashboard</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=My Dashboard</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
