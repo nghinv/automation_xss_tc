@@ -10,23 +10,31 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_Forum_46</td></tr>
-</thead><tr><td>echo</td><td>Gotooneforum/MoreActions/StartTopic/Content/Message</td><td></td></tr>
+</thead><tr>
+	<td>echo</td>
+	<td>Gotooneforum/MoreActions/StartTopic/Content/Message</td>
+	<td></td>
+</tr>
 <tr>
 	<td>store</td>
-	<td>4043</td><td>MSG_CODE</td>
+	<td>4043</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>include</td>
 	<td>COMM_FORUM_topic_startnew.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>storeEval</td>
-	<td>window.jjQuery(&quot;#messageContent___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;&amp;lt;script&amp;gt;alert(${MSG_CODE})&amp;lt;/script&amp;gt;&quot;)</td>
-	<td></td></tr>
+	<td>window.jjQuery(&quot;#messageContent___Frame&quot;).contents().find('#cke_messageContent iframe').contents().find('body').html(&quot;&amp;lt;script&amp;gt;alert(${MSG_CODE})&amp;lt;/script&amp;gt;&quot;)</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=button:contains(&quot;Submit&quot;)</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>

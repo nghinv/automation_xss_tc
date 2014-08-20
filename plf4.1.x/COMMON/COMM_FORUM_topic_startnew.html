@@ -67,8 +67,13 @@
 	<td>title${timestamp}</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='cke_messageContent']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeEval</td>
-	<td>window.jjQuery(&quot;#messageContent___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;message${timestamp}&quot;)</td>
+	<td>window.jjQuery(&quot;#messageContent___Frame&quot;).contents().find('#cke_messageContent iframe').contents().find('body').html(&quot;message${timestamp}&quot;)</td>
 	<td></td>
 </tr>
 <tr>

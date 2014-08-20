@@ -10,27 +10,41 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_Forum_103</td></tr>
-</thead><tr><td>echo</td><td>Gotoonetopic/PostReply/Title</td><td></td></tr>
+</thead><tr>
+	<td>echo</td>
+	<td>Gotoonetopic/PostReply/Title</td>
+	<td></td>
+</tr>
 <tr>
 	<td>store</td>
-	<td>4093</td><td>MSG_CODE</td>
+	<td>4093</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>include</td>
 	<td>COMM_FORUM_goto_topic.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_get_timestamp.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Post Reply</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Post Reply</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//input[@id='PostTitle']</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>//input[@id='PostTitle']</td>
@@ -38,16 +52,19 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//td[@id='xEditingArea']</td>
-	<td></td></tr>
+	<td>//div[@id='cke_MessageContent']</td>
+	<td></td>
+</tr>
 <tr>
 	<td>storeEval</td>
-	<td>window.jjQuery(&quot;#MessageContent___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;message${timestamp}&quot;)</td>
-	<td></td></tr>
+	<td>window.jjQuery(&quot;#MessageContent___Frame&quot;).contents().find('#MessageContent iframe').contents().find('body').html(&quot;message${timestamp}&quot;)</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction.uiActionBorder &gt; button:contains(&quot;Submit&quot;)</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>

@@ -10,11 +10,21 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_Wiki_6,7</td></tr>
-</thead><tr><td>echo</td><td>EditPage/contentvalue</td><td></td></tr><tr><td>store</td><td>6007</td>	<td>MSG_CODE</td></tr>
+</thead><tr>
+	<td>echo</td>
+	<td>EditPage/contentvalue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>6007</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>=== Login ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -23,47 +33,58 @@
 <tr>
 	<td>echo</td>
 	<td>=== Add/Edit page ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Wiki</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAt</td>
 	<td>link=Wiki</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//div[contains(@onclick,'#EditPage')]</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>//div[contains(@onclick,'#EditPage')]</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
-	<td>id=Markup</td>
+	<td>id=body</td>
 	<td>= Welcome to intranet =&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>${MSG_CODE}</td>	<td></td></tr>
+	<td>${MSG_CODE}</td>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>=== Log out ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

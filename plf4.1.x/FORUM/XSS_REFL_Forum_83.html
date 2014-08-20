@@ -10,31 +10,41 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_Forum_93</td></tr>
-</thead><tr><td>echo</td><td>Answer/Category/gotoonequestion/Comment/Parametervalue</td><td></td></tr>
+</thead><tr>
+	<td>echo</td>
+	<td>Answer/Category/gotoonequestion/Comment/Parametervalue</td>
+	<td></td>
+</tr>
 <tr>
 	<td>store</td>
-	<td>4083</td><td>MSG_CODE</td>
+	<td>4083</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>include</td>
 	<td>COMM_FORUM_goto_one_question.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=div.questionAction &gt; a:contains(&quot;Comment&quot;)</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//td[@id='xEditingArea']</td>
-	<td></td></tr>
+	<td>//div[@id='cke_CommentContent']</td>
+	<td></td>
+</tr>
 <tr>
 	<td>storeEval</td>
-	<td>window.jjQuery(&quot;#CommentContent___Frame&quot;).contents().find('#xEditingArea iframe').contents().find('body').html(&quot;&amp;lt;script&amp;gt;alert(${MSG_CODE})&amp;lt;/script&amp;gt;&quot;)</td>
-	<td></td></tr>
+	<td>window.jjQuery(&quot;#CommentContent___Frame&quot;).contents().find('#cke_CommentContent iframe').contents().find('body').html(&quot;&amp;lt;script&amp;gt;alert(${MSG_CODE})&amp;lt;/script&amp;gt;&quot;)</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction.uiActionBorder &gt; button.btn:contains(&quot;Save&quot;)</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_assertAlertNotPresent.html</td>
@@ -43,7 +53,8 @@
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

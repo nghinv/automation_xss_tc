@@ -10,69 +10,191 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_SOC_MyProperties_28</td></tr>
-</thead><tr><td>echo</td><td>Adminbar/MyWiki/Add/EditPage/contentvalue</td><td></td></tr><tr><td>store</td><td>5428</td>	<td>MSG_CODE</td></tr>
+</thead><tr>
+	<td>echo</td>
+	<td>Adminbar/MyWiki/Add/EditPage/contentvalue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>5428</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>=== Login ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
+	<td>begin$Template$</td>
+	<td>COMM_login.html</td>
+	<td></td>
+</tr>
+<tr>
 	<td>echo</td>
-	<td>=== My Activity Stream - Comment ===</td>
-	<td></td></tr>
+	<td>++ COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>begin$Template$</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>end$Template$</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>windowMaximize</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=Root Root</td>
-	<td></td></tr>
-<tr>
-	<td>click</td>
-	<td>link=Root Root</td>
-	<td></td></tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=My Wiki</td>
-	<td></td></tr>
-<tr>
-	<td>click</td>
-	<td>link=My Wiki</td>
-	<td></td></tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//div[contains(@onclick,'#EditPage')]</td>
-	<td></td></tr>
-<tr>
-	<td>click</td>
-	<td>//div[contains(@onclick,'#EditPage')]</td>
-	<td></td></tr>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
-	<td>id=Markup</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>end$Template$</td>
+	<td>COMM_login.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== My Activity Stream - Comment ===</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Root Root</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Root Root</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=My Wiki</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=My Wiki</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[contains(@onclick,'#EditPage')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[contains(@onclick,'#EditPage')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=body</td>
 	<td>= Welcome to intranet =&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>${MSG_CODE}</td>	<td></td></tr>
+	<td>${MSG_CODE}</td>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>=== Log out ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
-
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
