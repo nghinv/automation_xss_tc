@@ -13,7 +13,8 @@
 </thead><tbody>
 <tr>
 	<td>store</td>
-	<td>8006</td>	<td>MSG_CODE</td>
+	<td>8006</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -23,21 +24,23 @@
 <tr>
 	<td>echo</td>
 	<td>==User1 logins, creates a calendar</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=demo,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>assertText</td>
+	<td>waitForElementPresent</td>
 	<td>link=Calendar</td>
 	<td>Calendar</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Calendar</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=Users</td>
@@ -51,15 +54,18 @@
 <tr>
 	<td>click</td>
 	<td>css=i.uiIconCalSimplePlus.uiIconLightGray</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=#tmpMenuElement &gt; ul.uiDropDownCal &gt; li &gt; a</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=displayName</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -73,7 +79,8 @@
 <tr>
 	<td>click</td>
 	<td>link=Show in Groups</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=AddGroupInput</td>
@@ -82,27 +89,33 @@
 <tr>
 	<td>click</td>
 	<td>css=span.btnContainer &gt; button.btn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=#UICalendarForm &gt; div.uiAction &gt; button.btn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Only alpha, digit, underscore, dash and space characters allowed for the field &quot;Display Name&quot;.</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>Only alpha, digit, underscore, dash and space characters allowed for the field &quot;Display Name&quot;.</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Details</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -111,7 +124,8 @@
 <tr>
 	<td>click</td>
 	<td>css=#UICalendarForm &gt; div.uiAction &gt; button.btn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=XSS_STOR_6</td>
@@ -125,21 +139,23 @@
 <tr>
 	<td>echo</td>
 	<td>==User 2 (root) logins, tests Calendar Settings, tab Displayed Calendar</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=root,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>assertText</td>
+	<td>waitForElementPresent</td>
 	<td>link=Calendar</td>
 	<td>Calendar</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Calendar</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=Users</td>
@@ -153,7 +169,8 @@
 <tr>
 	<td>click</td>
 	<td>css=i.uiIconSetting.uiIconLightGray</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=Displayed Calendars</td>
@@ -162,23 +179,28 @@
 <tr>
 	<td>click</td>
 	<td>link=Displayed Calendars</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>XSS_STOR_6</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>verifyTextPresent</td>
 	<td>XSS_STOR_6</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

@@ -13,7 +13,8 @@
 </thead><tbody>
 <tr>
 	<td>store</td>
-	<td>8007</td>	<td>MSG_CODE</td>
+	<td>8007</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -23,21 +24,23 @@
 <tr>
 	<td>echo</td>
 	<td>==User1 logins, creates an Event Category</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=demo,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>assertText</td>
+	<td>waitForElementPresent</td>
 	<td>link=Calendar</td>
 	<td>Calendar</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Calendar</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=Users</td>
@@ -51,15 +54,18 @@
 <tr>
 	<td>click</td>
 	<td>css=i.uiIconCalSimplePlus.uiIconLightGray</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>//div[@id='tmpMenuElement']/ul/li[3]/a</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=eventCategoryName</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=eventCategoryName</td>
@@ -68,31 +74,38 @@
 <tr>
 	<td>storeEval</td>
 	<td>window.jjQuery(&quot;#btnEventCategoryFormContainer&quot;).click();</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Only alpha, digit, underscore, dash and space characters allowed for the field &quot;Event Category&quot;.</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>Only alpha, digit, underscore, dash and space characters allowed for the field &quot;Event Category&quot;.</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=#UIEventCategoryForm &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>==Test ends here because mal_script is blocked</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

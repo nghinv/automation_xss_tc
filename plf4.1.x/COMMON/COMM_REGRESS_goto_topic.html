@@ -4,42 +4,37 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>XSS_REG_SEC_95</title>
+<title>COMM_REGRESS_goto_topic</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">XSS_REG_SEC_95</td></tr>
+<tr><td rowspan="1" colspan="3">COMM_REGRESS_goto_topic</td></tr>
 </thead><tbody>
 <tr>
-	<td>openAndWait</td>
-	<td>http://localhost:8080/portal/login?username=root&amp;password=gtn&amp;initialURI=http://www.google.com</td>
+	<td>echo</td>
+	<td>++ COMM_REGRESS_goto_topic</td>
 	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//input[contains(@id,'username')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[contains(@id,'username')]</td>
-	<td>root</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>//input[@id='UIPortalLoginFormControl']</td>
-	<td>gtngtn</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=button.button</td>
+	<td>link=Forums</td>
 	<td></td>
 </tr>
 <tr>
-	<td>assertNotTitle</td>
+	<td>click</td>
+	<td>id=UIContextPopupMenu2</td>
 	<td></td>
-	<td>Google</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=UIContextPopupMenu1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_REGRESS_goto_topic</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

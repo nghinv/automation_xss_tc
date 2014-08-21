@@ -13,7 +13,8 @@
 </thead><tbody>
 <tr>
 	<td>store</td>
-	<td>8004</td>	<td>MSG_CODE</td>
+	<td>8004</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -23,21 +24,123 @@
 <tr>
 	<td>echo</td>
 	<td>==User1 logins, creates an event in group calendar</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=demo,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>assertText</td>
+	<td>begin$Template$</td>
+	<td>COMM_login.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>begin$Template$</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>end$Template$</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>windowMaximize</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>demo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=demo&amp;password=gtngtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>end$Template$</td>
+	<td>COMM_login.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
 	<td>link=Calendar</td>
 	<td>Calendar</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Calendar</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=Users</td>
@@ -50,12 +153,14 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=Event</td>
-	<td></td></tr>
+	<td>id=UIActionBarQuickAddEvent</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=eventName</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=eventName</td>
@@ -74,11 +179,13 @@
 <tr>
 	<td>click</td>
 	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>==User 2 (root) logins, tests Upcoming Event Portlet</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -87,19 +194,23 @@
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>verifyTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

@@ -12,26 +12,26 @@
 <tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
 </thead><tbody><tr><td>store</td><td>8001</td>	<td>MSG_CODE</td></tr>
 <tr>
-	<td>store</td>
-	<td>space${MSG_CODE}</td>
-	<td>space_name</td>
-</tr>
-<tr>
 	<td>echo</td>
 	<td>==User1 logins, creates a space</td>
 	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
 	<td>UserName=demo,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Join a space</td>
+	<td>setSpeed</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Join a space</td>
+	<td>openAndWait</td>
+	<td>/portal/intranet/all-spaces</td>
 	<td></td></tr>
 <tr>
 	<td>click</td>
@@ -41,6 +41,11 @@
 	<td>waitForElementPresent</td>
 	<td>id=displayName</td>
 	<td></td></tr>
+<tr>
+	<td>store</td>
+	<td>space${timestamp}</td>
+	<td>space_name</td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -55,7 +60,7 @@
 	<td>name=UIRegistration</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>css=div.uiAction &gt; button.btn</td>
 	<td></td></tr>
 <tr>
@@ -68,20 +73,12 @@
 	<td>UserName=mary,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Join a space</td>
+	<td>setSpeed</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Join a space</td>
-	<td></td></tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=${space_name}</td>
-	<td></td></tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=${space_name}</td>
+	<td>openAndWait</td>
+	<td>/portal/g/:spaces:${space_name}/${space_name}</td>
 	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
@@ -109,20 +106,12 @@
 	<td>UserName=demo,UserPassword=gtngtn</td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Join a space</td>
+	<td>setSpeed</td>
+	<td>3000</td>
 	<td></td></tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Join a space</td>
-	<td></td></tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>link=${space_name}</td>
-	<td></td></tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=${space_name}</td>
+	<td>openAndWait</td>
+	<td>/portal/g/:spaces:${space_name}/${space_name}</td>
 	<td></td></tr>
 <tr>
 	<td>waitForElementPresent</td>
