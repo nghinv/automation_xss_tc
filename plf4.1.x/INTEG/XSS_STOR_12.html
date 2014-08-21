@@ -10,7 +10,11 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
-</thead><tbody><tr><td>store</td><td>8012</td>	<td>MSG_CODE</td></tr>
+</thead><tbody><tr>
+	<td>store</td>
+	<td>8012</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>store</td>
 	<td>space${MSG_CODE}</td>
@@ -24,7 +28,8 @@
 <tr>
 	<td>echo</td>
 	<td>==User1 logins, creates a space</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -33,19 +38,23 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Join a space</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Join a space</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>//button[@type='button']</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=displayName</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=displayName</td>
@@ -54,43 +63,53 @@
 <tr>
 	<td>click</td>
 	<td>link=Access &amp; Edit</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>name=UIRegistration</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>css=div.uiAction &gt; button.btn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>====User1 creates a wiki page (in space)</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=i.uiIconAppWikiPortlet.uiIconDefaultApp</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>css=i.uiIconAppWikiPortlet.uiIconDefaultApp</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.dropdown.uiActionWithLabel</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=div.dropdown.uiActionWithLabel</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Blank Page</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=titleInput</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=titleInput</td>
@@ -98,25 +117,29 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=Markup</td>
+	<td>id=body</td>
 	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>exact:The following characters are not allowed in the page title: % = : @ / \ | ^ # ; [ ] { } &lt; &gt; * ' &quot; + ? &amp;.</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>verifyTextPresent</td>
 	<td>exact:The following characters are not allowed in the page title: % = : @ / \ | ^ # ; [ ] { } &lt; &gt; * ' &quot; + ? &amp;.</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=OK</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=titleInput</td>
@@ -125,7 +148,8 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>id=UISubmitToolBarUpper_SavePage_</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertText</td>
 	<td>id=titleInfo</td>
@@ -134,7 +158,8 @@
 <tr>
 	<td>echo</td>
 	<td>==User 2 (root) logins, joins space, tests Wiki page</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -143,27 +168,33 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Join a space</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Join a space</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=${space_name}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=${space_name}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=i.uiIconAppWikiPortlet.uiIconDefaultApp</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>css=i.uiIconAppWikiPortlet.uiIconDefaultApp</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForText</td>
 	<td>link=wiki${MSG_CODE}</td>
@@ -172,22 +203,18 @@
 <tr>
 	<td>clickAndWait</td>
 	<td>link=wiki${MSG_CODE}</td>
-	<td></td></tr>
-<tr>
-	<td>waitForTextPresent</td>
-	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
-	<td></td></tr>
-<tr>
-	<td>assertTextPresent</td>
-	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>${MSG_CODE}</td>	<td></td></tr>
+	<td>${MSG_CODE}</td>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

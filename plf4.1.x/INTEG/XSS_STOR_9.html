@@ -13,7 +13,8 @@
 </thead><tbody>
 <tr>
 	<td>store</td>
-	<td>8009</td>	<td>MSG_CODE</td>
+	<td>8009</td>
+	<td>message_code</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -23,7 +24,8 @@
 <tr>
 	<td>echo</td>
 	<td>==User1 logins, creates a folder, shares</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -32,39 +34,48 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Documents</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Documents</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=driveAction</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>id=driveAction</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Sites Management</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Sites Management</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=li &gt; a.actionIcon</td>
-	<td></td></tr>
+	<td>css=a:contains(&quot;New Folder&quot;)</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
-	<td>css=li &gt; a.actionIcon</td>
-	<td></td></tr>
+	<td>css=a:contains(&quot;New Folder&quot;)</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=titleTextBox</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
 	<td>id=titleTextBox</td>
@@ -73,19 +84,23 @@
 <tr>
 	<td>click</td>
 	<td>css=button.btn</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>==User 2 logins, view folder in its parent node</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -94,43 +109,53 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Documents</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Documents</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>id=driveAction</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>id=driveAction</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Sites Management</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Sites Management</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertTextPresent</td>
 	<td>${mal_script}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
