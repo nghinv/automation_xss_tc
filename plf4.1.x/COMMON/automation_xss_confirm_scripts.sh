@@ -18,7 +18,7 @@ TEST_BROWSER_OPTION=${TEST_BROWSER_OPTION:-"*firefox /usr/lib/firefox/firefox-bi
 TEST_SELENIUM_VERSION_OPTION=${TEST_SELENIUM_VERSION_OPTION:-"selenium-server-standalone-2.25.0.jar"}
 TEST_SELENIUM_OTHER_OPTIONS=${TEST_SELENIUM_OTHER_OPTIONS:-"-timeout 60000"}
 
-automation_project_dir="/java/exo-working/automation_xss_tc/plf4.0.x/"
+automation_project_dir="/java/exo-working/automation_xss_tc/plf4.1.x/"
 if [ ! -d ${automation_project_dir} ]; then
   echo "`date`,ERROR:: folder ${automation_project_dir} does not exist, exit!"
 fi
