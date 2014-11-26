@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.google.com.vn/" />
+<title>XSS_REFL_SOC_Space_1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_SOC_Space_1</td></tr>
+</thead><tr><td>echo</td><td>Gotoaspace/SpaceSettings/Settings/Name</td><td></td></tr><tr><td>store</td><td>5301</td>	<td>MSG_CODE</td></tr>
+<tr>
+	<td>echo</td>
+	<td>=== Login ===</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>=== Space settings ===</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>+++ Create a new space +++</td>
+	<td></td></tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Join a space</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='button']</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>id=displayName</td>
+	<td>XSSspace01</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Access &amp; Edit</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>name=UIRegistration</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='UISpaceVisibility']/div/div[2]/div/label/span</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>+++ Space settings - Name +++</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=settings</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>id=settings</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=displayName</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>id=displayName</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>id=displayName</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&gt;/script&gt;</td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>${MSG_CODE}</td>	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>+++ Delete a space +++</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(@href,'portal/intranet/all-spaces')]</td>
+	<td></td></tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Spaces Found</td>
+	<td></td></tr>
+<tr>
+	<td>clickAt</td>
+	<td>//button[@class='confirmPopup btn pull-right']</td>
+	<td></td></tr>
+<tr>
+	<td>clickAt</td>
+	<td>//a[@class='btn']</td>
+	<td></td></tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Results are displayed in alphabetical order</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>=== Log out ===</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

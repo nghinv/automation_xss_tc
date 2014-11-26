@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_EXOGTN_9</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_EXOGTN_9</td></tr>
+</thead><tr><td>echo</td><td>Administration/Addusers/UserProfiles/Profiles/FamilyName</td><td></td></tr>
+<tr>
+	<td>store</td>
+	<td>3009</td><td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_EXOGTN_add_user.html</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=User Profile</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>link=Profile</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_EXOGTN_user_profile.html</td>
+	<td></td></tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>id=user.name.family</td>
+	<td>&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=OK</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

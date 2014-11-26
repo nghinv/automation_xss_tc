@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_CAL_remote_detail</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_CAL_remote_detail</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_CAL_remote_detail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Calendar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Calendar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@data-original-title='Calendar Actions']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tmpMenuElement &gt; ul.uiDropDownCal &gt; li &gt; a &gt; i.uiIconCalRemoteCalendar.uiIconLightGray</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#UISubscribeForm&gt;div&gt;div.control-group&gt;div.controls&gt;input#url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#UISubscribeForm&gt;div&gt;div.control-group&gt;div.controls&gt;input#url</td>
+	<td>http://localhost:8080/portal/intranet/${timestamp}/</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#UISubscribeForm&gt;div.uiAction.uiActionBorder&gt;button.btn:contains('Next')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='name']</td>
+	<td>Display name ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#UIRemoteCalendar&gt;div&gt;div.control-group&gt;div.descriptionArea&gt;textarea#description</td>
+	<td>description ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='username']</td>
+	<td>name_${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='password']</td>
+	<td>pass_${timestamp}</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_CAL_remote_detail</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

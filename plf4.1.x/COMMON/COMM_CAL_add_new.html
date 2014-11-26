@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_CAL_add_new</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_CAL_add_new</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_CAL_add_new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Calendar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Calendar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@data-original-title='Calendar Actions']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tmpMenuElement &gt; ul.uiDropDownCal &gt; li &gt; a &gt; i.uiIconCalAddCalendar.uiIconLightGray</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='calendarDetail']/div/div[1]/div/input[@id='displayName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@id='calendarDetail']/div/div[1]/div/input[@id='displayName']</td>
+	<td>Display name ${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@id='calendarDetail']/div/div[2]/div/textarea[@id='description']</td>
+	<td>Description ${timestamp}</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_CAL_add_new</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

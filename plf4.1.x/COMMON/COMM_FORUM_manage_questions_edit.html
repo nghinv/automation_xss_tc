@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_FORUM_manage_questions_edit</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_FORUM_manage_questions_edit</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_FORUM_manage_questions_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>My Space ${timestamp}</td>
+	<td>Spacename</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_FORUM_create_space.html</td>
+	<td>SpaceName=${Spacename}</td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>===== Start to create a new question</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=${Spacename}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconAppAnswersPortlet.uiIconDefaultApp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button:contains(&quot;Submit Question&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='QuestionTitle']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='QuestionTitle']</td>
+	<td>My question name</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='EmailAddress']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='EmailAddress']</td>
+	<td>abc@exoplatform.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction.uiActionBorder &gt; button.btn:contains(&quot;Save&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=OK</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>===== End of creating a new question</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Manage Questions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='QuestionManagerment-tab']/table/tbody/tr[1]/td[5]/a[@data-original-title='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='QuestionTitle']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='QuestionTitle']</td>
+	<td>Question ${timestamp}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='cke_Question']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#Question___Frame&quot;).contents().find('#cke_Question iframe').contents().find('body').html(&quot;Question detail ${timestamp}&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='Author']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='Author']</td>
+	<td>Author ${timestamp}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='EmailAddress']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='EmailAddress']</td>
+	<td>test${timestamp}@exoplatform.com</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_FORUM_manage_questions_edit</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

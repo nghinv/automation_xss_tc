@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_EXOGTN_83</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_EXOGTN_83</td></tr>
+</thead><tr><td>echo</td><td>Administration/Administration/ServiceManagement/Method/Parameter/Parametervalue</td><td></td></tr>
+<tr>
+	<td>store</td>
+	<td>3083</td><td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td></tr>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>	<td></td></tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Management</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=skinId</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>name=skinId</td>
+	<td></td></tr>
+<tr>
+	<td>keyPress</td>
+	<td>name=skinId</td>
+	<td>\13</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REG_SEC_95</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REG_SEC_95</td></tr>
+</thead><tbody>
+<tr>
+	<td>openAndWait</td>
+	<td>http://localhost:8080/portal/login?username=root&amp;password=gtn&amp;initialURI=http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotTitle</td>
+	<td></td>
+	<td>Google</td>
+</tr>
+</tbody></table>
+</body>
+</html>

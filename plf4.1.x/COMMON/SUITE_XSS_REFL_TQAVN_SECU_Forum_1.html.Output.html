@@ -1,0 +1,180 @@
+<html>
+<head><style type='text/css'>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-style: italic;
+}
+
+.selected {
+    background-color: #ffffcc;
+}
+
+.status_done {
+    background-color: #eeffee;
+}
+
+.status_passed {
+    background-color: #ccffcc;
+}
+
+.status_failed {
+    background-color: #ffcccc;
+}
+
+.breakpoint {
+    background-color: #cccccc;
+    border: 1px solid black;
+}
+</style><title>Test suite results</title></head>
+<body>
+<h1>Test suite results </h1>
+
+<table>
+<tr>
+<td>result:</td>
+<td>passed</td>
+</tr>
+<tr>
+<td>totalTime:</td>
+<td>39</td>
+</tr>
+<tr>
+<td>numTestTotal:</td>
+<td>1</td>
+</tr>
+<tr>
+<td>numTestPasses:</td>
+<td>1</td>
+</tr>
+<tr>
+<td>numTestFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandPasses:</td>
+<td>1</td>
+</tr>
+<tr>
+<td>numCommandFailures:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>numCommandErrors:</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Selenium Version:</td>
+<td>2.25</td>
+</tr>
+<tr>
+<td>Selenium Revision:</td>
+<td>.0</td>
+</tr>
+<tr>
+<td>
+<table id="suiteTable" class="selenium" border="1" cellpadding="1" cellspacing="1"><tbody>
+<tr class="title status_passed"><td><b>Test Suite</b></td></tr>
+<tr class="  status_passed"><td><a href="#testresult0">XSS_REFL_TQAVN_SECU_Forum_1</a></td></tr>
+</tbody></table>
+
+
+</td>
+<td>&nbsp;</td>
+</tr>
+</table><table><tr>
+<td><a name="testresult0">XSS_REFL_TQAVN_SECU_Forum_1.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">XSS_REFL_TQAVN_SECU_Forum_1</td></tr>
+</thead><tbody>
+
+<tr title="click to fold/unfold included rows" class="  status_done" style="cursor: pointer;">
+	<td>includeExpanded</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr><tr><td rowspan="1" colspan="3">COMM_login</td></tr><tr class="  status_done" style="cursor: pointer;"><td>echo</td><td>Logout to make sure that no logged in session is alive in the browser</td><td>Logout to make sure that no logged in session is alive in the browser</td></tr><tr class="  status_done" style="cursor: pointer;"><td>setSpeed</td><td>2000</td><td>&nbsp;</td></tr><tr title="click to fold/unfold included rows" class="  status_done" style="cursor: pointer;"><td>includeExpanded</td><td>COMM_logout.html</td><td>&nbsp;</td></tr><tr><td rowspan="1" colspan="3">COMM_logout</td></tr><tr class="  status_done" style="cursor: pointer;"><td>echo</td><td>=== Log out ===</td><td>=== Log out ===</td></tr><tr class="  status_done" style="cursor: pointer;"><td>openAndWait</td><td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout </td><td>&nbsp;</td></tr><tr class="  status_done" style="cursor: pointer;"><td>echo</td><td>=== Login ===</td><td>=== Login ===</td></tr><tr class="  status_done" style="cursor: pointer;"><td>openAndWait</td><td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td><td>&nbsp;</td></tr><tr class="  status_done" style="cursor: pointer;"><td>openAndWait</td><td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td><td>&nbsp;</td></tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>echo</td>
+	<td>=== Input&nbsp;&nbsp;on Forums searchbox ===</td>
+	<td>=== Input  on Forums searchbox ===</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Forums</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>waitForElementPresent</td>
+	<td>//input[@id='inputValue']</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//input[@id='inputValue']</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>//input[@id='inputValue']</td>
+	<td>&lt;script&gt;alert("XSS")&lt;/script&gt;</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>keyPress</td>
+	<td>//input[@id='inputValue']</td>
+	<td>\13</td>
+</tr>
+<tr class="  status_passed" style="cursor: pointer;">
+	<td>assertAlertNotPresent</td>
+	<td></td>
+	<td>XSS</td>
+</tr>
+<tr title="click to fold/unfold included rows" class="  status_done" style="cursor: pointer;">
+	<td>includeExpanded</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr><tr><td rowspan="1" colspan="3">COMM_logout</td></tr><tr class="  status_done" style="cursor: pointer;"><td>echo</td><td>=== Log out ===</td><td>=== Log out ===</td></tr><tr class="  status_done" style="cursor: pointer;"><td>openAndWait</td><td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout </td><td>&nbsp;</td></tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr></table><pre>
+info: Starting test /selenium-server/tests/XSS_REFL_TQAVN_SECU_Forum_1.html
+info: Executing: |include | COMM_login.html | UserName=root,UserPassword=gtngtn |
+info: Executing: |echo | Logout to make sure that no logged in session is alive in the browser |  |
+info: Executing: |setSpeed | 2000 |  |
+info: Executing: |include | COMM_logout.html |  |
+info: Executing: |echo | === Log out === |  |
+info: Executing: |open | /portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout |  |
+info: Executing: |echo | === Login === |  |
+info: Executing: |open | /portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn |  |
+info: Executing: |open | /portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn |  |
+info: Executing: |echo | === Input  on Forums searchbox === |  |
+info: Executing: |clickAndWait | link=Forums |  |
+info: Executing: |waitForElementPresent | //input[@id=&apos;inputValue&apos;] |  |
+info: Executing: |click | //input[@id=&apos;inputValue&apos;] |  |
+info: Executing: |type | //input[@id=&apos;inputValue&apos;] | &lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt; |
+info: Executing: |keyPress | //input[@id=&apos;inputValue&apos;] | \13 |
+info: Executing: |assertAlertNotPresent |  | XSS |
+info: Executing: |include | COMM_logout.html |  |
+info: Executing: |echo | === Log out === |  |
+info: Executing: |open | /portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout |  |
+</pre></body></html>

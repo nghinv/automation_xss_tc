@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_ECMS_CON_nodetype_add</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_ECMS_CON_nodetype_add</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_ECMS_CON_nodetype_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Content Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Repository</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Node Types</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>	
+         <td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>	
+         <td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=nodeTypeName</td>
+	<td>node${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=superTypes</td>
+	<td>app:application</td>
+</tr>
+
+<tr>
+	<td>click</td>
+	<td>link=Property</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>	
+         <td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=propertyname</td>
+	<td>property${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=valueconstraints</td>
+	<td>value${timestamp}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.propertyDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>click</td>
+	<td>link=Child Node</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>	
+         <td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=childNodename</td>
+	<td>childnode${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=defaultPrimaryType</td>
+	<td>app:application</td>
+</tr>
+
+<tr>
+	<td>type</td>
+	<td>id=requiredPrimaryType</td>
+	<td>app:application</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.childNodeDefinition &gt; div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>echo</td>
+	<td>-- COMM_ECMS_CON_nodetype_add</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

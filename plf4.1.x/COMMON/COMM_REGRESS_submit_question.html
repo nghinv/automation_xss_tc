@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_REGRESS_submit_question</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_REGRESS_submit_question</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_REGRESS_submit_question</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>MySpace${timestamp}</td>
+	<td>Spacename</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_FORUM_create_space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=My Spaces</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Spaces</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn:contains(&quot;Add New Space&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='displayName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='displayName']</td>
+	<td>${Spacename}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction &gt; button.btn:contains(&quot;Create&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_FORUM_create_space</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@id='answer']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='answer']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button:contains(&quot;Submit Question&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button:contains(&quot;Submit Question&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='QuestionTitle']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='QuestionTitle']</td>
+	<td>${QuestionName}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='cke_Question']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery(&quot;#Question___Frame&quot;).contents().find('#cke_Question iframe').contents().find('body').html(&quot;Question detail ${timestamp}&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='EmailAddress']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='EmailAddress']</td>
+	<td>test${timestamp}@exoplatform.com</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_REGRESS_submit_question</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

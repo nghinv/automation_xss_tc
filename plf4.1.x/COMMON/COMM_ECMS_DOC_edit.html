@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_ECMS_DOC_edit</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_ECMS_DOC_edit</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_ECMS_DOC_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Documents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Documents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=driveAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=driveAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.TRContainer.clearfix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Content Management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Content Management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='address']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='address']</td>
+	<td>/hello.txt</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery('#UIJCRExplorerPortlet').parents(':eq(1)').attr('id');</td>
+	<td>portal_componentid</td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>eXo.webui.UIForm.submitForm('${portal_componentid}#UIAddressBar','ChangeNode',true)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Edit')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td></td>
+	<td>3000</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//textarea[@id='content']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='content']</td>
+	<td>${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='title0']</td>
+	<td>${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='description0']</td>
+	<td>${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='creator0']</td>
+	<td>${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='source0']</td>
+	<td>${timestamp}</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_ECMS_DOC_edit</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
