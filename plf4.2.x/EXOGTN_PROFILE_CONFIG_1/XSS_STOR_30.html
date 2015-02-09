@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_STOR_1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_STOR_1</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle, grouplabel,groupmembership)</td>
+	<td></td></tr>
+<tr>
+	<td>store</td>
+	<td>8030</td>	<td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>&lt;script&gt;alert(8030);&lt;/script&gt;</td>
+	<td>mal_script</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime()</td>
+	<td>timestamp</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>u${timestamp}</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>username=${username}</td>
+	<td></td></tr>
+<tr>
+	<td>store</td>
+	<td>g${timestamp}</td>
+	<td>groupname</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>m${timestamp}</td>
+	<td>membershipname</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_INTEG_GTN.html</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>==TEST My Connections, tab Received</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>====User2 sends request to root</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=${username},UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/connexions</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Everyone</td>
+	<td></td></tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Everyone</td>
+	<td></td></tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=Search</td>
+	<td></td></tr>
+<tr>
+	<td>type</td>
+	<td>id=Search</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=SearchButton</td>
+	<td></td></tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>root@localhost</td>
+	<td></td></tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.pull-right</td>
+	<td></td></tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Invitation Sent</td>
+	<td></td></tr>
+<tr>
+	<td>echo</td>
+	<td>====roots tests tab Received</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/connections/receivedInvitations/root</td>
+	<td></td></tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>${username}@example.com</td>
+	<td></td></tr>
+<tr>
+	<td>assertAlertNotPresent</td>
+	<td>${message_code}</td>
+	<td></td></tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td></tr>
+</tbody></table>
+</body>
+</html>

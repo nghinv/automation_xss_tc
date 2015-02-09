@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>COMM_FORUM_new_javascript</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">COMM_FORUM_new_javascript</td></tr>
+</thead><tbody>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_FORUM_new_javascript</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td.OfficeMiddleTDContainer.TDContainer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sites Explorer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'New Content')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIcon64x64Templateexo_jsFile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='name']</td>
+	<td>name${timestamp}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='JSpriority']</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//textarea[@id='contentHtml']</td>
+	<td>content${timestamp}</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_FORUM_new_javascript</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

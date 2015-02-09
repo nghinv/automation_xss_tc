@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REG_SEC_202</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REG_SEC_202</td></tr>
+</thead><tbody>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>9018</td>
+	<td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Groups and Roles</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Group Management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconUpLevel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconUpLevel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconUpLevel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconUpLevel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconUpLevel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.actionIcon&gt;i.uiIconPlus</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='groupName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{&quot;##########&quot;.split('').map(function(){return 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_'.charAt(Math.floor(62*Math.random()));}).join('');}</td>
+	<td>v_tempValue</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='groupName']</td>
+	<td>${v_tempValue}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='label']</td>
+	<td>${v_tempValue}&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn:contains('Save')</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sites Explorer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Permissions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Permissions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=a.actionIcon&gt;i.uiIconSelectMember</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.actionIcon&gt;i.uiIconSelectMember</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>link=${v_tempValue}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

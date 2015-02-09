@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>XSS_REFL_ECMS_CON_113</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">XSS_REFL_ECMS_CON_113</td></tr>
+</thead><tr>
+	<td>echo</td>
+	<td>SiteExplorer/EditTag/taginfor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>2291</td>
+	<td>MSG_CODE</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_login.html</td>
+	<td>UserName=root,UserPassword=gtngtn</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>windowMaximize</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>INFO:: Logout first to make sure that no logged in session is alive in the browser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/intranet/?portal:componentId=UIPortal&amp;portal:action=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>windowMaximize</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[contains(@id,'username')]</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='UIPortalLoginFormControl']</td>
+	<td>gtngtn</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>openAndWait</td>
+	<td>/portal/login?initialURI=/portal/intranet&amp;username=root&amp;password=gtngtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_get_timestamp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>javascript{var startTime=new Date().getTime(); startTime=startTime.toString().substr(0,10); }</td>
+	<td>timestamp</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_get_timestamp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_get_timestamp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>javascript{var startTime=new Date().getTime(); startTime=startTime.toString().substr(0,10); }</td>
+	<td>timestamp</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_get_timestamp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sites Explorer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=driveAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=driveAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.TRContainer.clearfix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Content Management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Content Management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='address']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='address']</td>
+	<td>/connection.png</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>window.jjQuery('#UIJCRExplorerPortlet').parents(':eq(1)').attr('id');</td>
+	<td>portal_componentid</td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>eXo.webui.UIForm.submitForm('${portal_componentid}#UIAddressBar','ChangeNode',true)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tag</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='names']</td>
+	<td>name${timestamp}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.uiAction.uiActionBorder &gt; button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=driveAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sites Management</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconEcmsTagExplorerMini</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconEdit.uiIconLightGray</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.uiIconEditTag.uiIconLightGray</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='tagName']</td>
+	<td>&lt;script&gt;alert(${MSG_CODE})&lt;/script&gt;</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_assertAlertNotPresent.html</td>
+	<td>MSG_CODE=${MSG_CODE}</td>
+</tr>
+<tr>
+	<td>include</td>
+	<td>COMM_logout.html</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
