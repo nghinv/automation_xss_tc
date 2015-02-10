@@ -11,7 +11,7 @@ IDEIncludeCommand.LOG_PREFIX = "IDEIncludeCommand: ";
 IDEIncludeCommand.BEGIN_TEMPLATE = "begin$Template$";
 IDEIncludeCommand.END_TEMPLATE = "end$Template$";
 IDEIncludeCommand.VERSION = "1.1";
-IDEIncludeCommand.TQA_XSS_DIR = "file:////home/quyennt/java/exo-working/automation_xss_tc/plf4.1.x/COMMON/";
+IDEIncludeCommand.TQA_XSS_DIR = "file:////home/quyennt/java/exo-working/automation_xss_tc/plf4.2.x/COMMON/";
 
 IDEIncludeCommand.prototype.prepareTestCaseAsText = function(responseAsText, paramsArray) {
     /**
