@@ -10,11 +10,21 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">XSS_REFL_SOC_MyProperties_14</td></tr>
-</thead><tr><td>echo</td><td>Adminbar/Myactivitiesstream/share/whatareyouworkingon</td><td></td></tr><tr><td>store</td><td>5417</td>	<td>MSG_CODE</td></tr>
+</thead><tr>
+	<td>echo</td>
+	<td>Adminbar/Myactivitiesstream/share/whatareyouworkingon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>5417</td>
+	<td>MSG_CODE</td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>=== Login ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -23,42 +33,53 @@
 <tr>
 	<td>echo</td>
 	<td>=== My Activity Stream - Share Activity Stream ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Root Root</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Root Root</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>link=My Activity Stream</td>
-	<td></td></tr>
+	<td>link=My Activities</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
-	<td>link=My Activity Stream</td>
-	<td></td></tr>
+	<td>link=My Activities</td>
+	<td></td>
+</tr>
 <tr>
 	<td>storeEval</td>
 	<td>window.jjQuery(&quot;#DisplaycomposerInput&quot;).text(&quot;&lt;script&gt;alert(${MSG_CODE});&lt;/script&gt;&quot;); window.jjQuery(&quot;#ShareButton&quot;).removeAttr('disabled'); window.jjQuery(&quot;.placeholder&quot;).attr('style','top: -100px; display: none;'); window.jjQuery(&quot;#ShareButton&quot;).attr(&quot;class&quot;,&quot;pull-right btn btn-primary&quot;);</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAt</td>
 	<td>//button[@id='ShareButton']</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
-	<td>${MSG_CODE}</td>	<td></td></tr>
+	<td>${MSG_CODE}</td>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>=== Log out ===</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
