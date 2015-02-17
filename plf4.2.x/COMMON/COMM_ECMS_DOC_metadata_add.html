@@ -22,6 +22,31 @@
 	<td></td>
 </tr>
 <tr>
+	<td>begin$Template$</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>++ COMM_get_timestamp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>javascript{var startTime=new Date().getTime(); startTime=startTime.toString().substr(0,10); }</td>
+	<td>timestamp</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>-- COMM_get_timestamp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>end$Template$</td>
+	<td>COMM_get_timestamp.html</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>3000</td>
 	<td></td>
