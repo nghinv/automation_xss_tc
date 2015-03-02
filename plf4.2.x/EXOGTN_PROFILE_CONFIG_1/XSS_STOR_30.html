@@ -14,10 +14,12 @@
 <tr>
 	<td>echo</td>
 	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle, grouplabel,groupmembership)</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>store</td>
-	<td>8030</td>	<td>MSG_CODE</td>
+	<td>8030</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -37,7 +39,8 @@
 <tr>
 	<td>echo</td>
 	<td>username=${username}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>store</td>
 	<td>g${timestamp}</td>
@@ -56,15 +59,18 @@
 <tr>
 	<td>include</td>
 	<td>COMM_INTEG_GTN.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>==TEST My Connections, tab Received</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>====User2 sends request to root</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -73,44 +79,53 @@
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/connexions</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Everyone</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Everyone</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>id=Search</td>
-	<td></td></tr>
+	<td>id=SearchButton</td>
+	<td></td>
+</tr>
 <tr>
 	<td>type</td>
-	<td>id=Search</td>
+	<td>id=name</td>
 	<td>root</td>
 </tr>
 <tr>
 	<td>click</td>
 	<td>id=SearchButton</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>root@localhost</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>css=button.btn.pull-right</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Invitation Sent</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>====roots tests tab Received</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -119,19 +134,23 @@
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/connections/receivedInvitations/root</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>${username}@example.com</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

@@ -14,10 +14,12 @@
 <tr>
 	<td>echo</td>
 	<td>==This script was recorded while VALIDATORS ARE CONFIGURED (displayname, jobtitle, grouplabel,groupmembership)</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>store</td>
-	<td>8049</td>	<td>MSG_CODE</td>
+	<td>8049</td>
+	<td>MSG_CODE</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -37,7 +39,8 @@
 <tr>
 	<td>echo</td>
 	<td>username=${username}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>store</td>
 	<td>g${timestamp}</td>
@@ -56,7 +59,8 @@
 <tr>
 	<td>echo</td>
 	<td>== Login &amp; create new user ==</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_login.html</td>
@@ -65,54 +69,63 @@
 <tr>
 	<td>include</td>
 	<td>COMM_INTEG_GTN.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>== Test Forum - New Message/Send to ==</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>openAndWait</td>
 	<td>/portal/intranet/forum</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>pause</td>
-	<td>5000</td>	<td></td></tr>
+	<td>5000</td>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Private Messages</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Private Messages</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>link=Compose New Message</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>link=Compose New Message</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>waitForTextPresent</td>
 	<td>Send to:</td>
-	<td></td></tr>
-<tr>
-	<td>click</td>
-	<td>css=div.controls &gt; a.actionIcon &gt; i.uiIconUser.uiIconLightGray</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>assertAlertNotPresent</td>
 	<td>${message_code}</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>echo</td>
 	<td>== Logout ==</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 <tr>
 	<td>include</td>
 	<td>COMM_logout.html</td>
-	<td></td></tr>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
